@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:8888/api/v1/';
+axios.defaults.baseURL = 'https://dry-falls-47415.herokuapp.com/api/v1/';
 axios.defaults.withCredentials = true;
 
 export default axios;
