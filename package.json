@@ -1,0 +1,42 @@
+{
+  "name": "national-museum-of-scotland",
+  "version": "1.0.0",
+  "description": "Front-end and Back-end for National Museum of Scotland",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production node server",
+    "dev": "nodemon server"
+  },
+  "author": "Dylan Mooney",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "date-fns": "^2.11.1",
+    "dot-object": "^2.1.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "express-mongo-sanitize": "^2.0.0",
+    "express-rate-limit": "^5.1.1",
+    "file-type": "^14.1.4",
+    "helmet": "^3.22.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.7",
+    "mongoose-paginate-v2": "^1.3.9",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.6",
+    "pdfkit": "^0.11.0",
+    "qrcode": "^1.4.4",
+    "slugify": "^1.4.0",
+    "stripe": "^8.39.0",
+    "uuid": "^7.0.3",
+    "validator": "^13.0.0",
+    "xss-clean": "^0.1.1"
+  }
+}

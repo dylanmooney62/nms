@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "5e8f8af0318aa1ca1df5bd87",
+    "name": "Dylan Mooney",
+    "email": "dylanmooney62@gmail.com",
+    "password": "dylanpassword123"
+  },
+  {
+    "_id": "5e8f8af0318aa1ca1df5bd88",
+    "role": "user",
+    "name": "Mark Smith",
+    "email": "mark@example.com",
+    "password": "markpassword123"
+  },
+  {
+    "_id": "5e8f8af0318aa1ca1df5bd89",
+    "role": "user",
+    "name": "Isabelle Parker",
+    "email": "isabelle@example.com",
+    "password": "isabellepassword123"
+  }
+]

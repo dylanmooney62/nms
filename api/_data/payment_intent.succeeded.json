@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "template_version": 0
+  },
+  "fixtures": [
+    {
+      "name": "payment_intent",
+      "path": "/v1/payment_intents",
+      "method": "post",
+      "params": {
+        "amount": 1200,
+        "confirm": "true",
+        "currency": "gbp",
+        "description": "(created by Stripe CLI)",
+        "payment_method": "pm_card_visa",
+        "payment_method_types": ["card"],
+        "receipt_email": "dylanmooney62@gmail.com",
+        "shipping": {
+          "name": "Dylan Mooney",
+          "address": {
+            "line1": "156 Highcoats",
+            "postal_code": "ML5 3PF",
+            "city": "Coatbridge",
+            "country": "GB"
+          }
+        },
+        "metadata": {
+          "orderId": "5e95ebc0de74af7e86ec9f3c"
+        }
+      }
+    }
+  ]
+}
