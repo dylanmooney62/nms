@@ -1,4 +1,4 @@
-require('dotenv').config({ path: './api/config/config.env' });
+require('dotenv').config({ path: './config.env' });
 require('colors');
 const path = require('path');
 const express = require('express');
