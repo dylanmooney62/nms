@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.js": "/static/js/main.ae1c5aa3.chunk.js",
+    "main.js.map": "/static/js/main.ae1c5aa3.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6691930f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6691930f.js.map",
+    "static/css/2.1f5941ba.chunk.css": "/static/css/2.1f5941ba.chunk.css",
+    "static/js/2.e6dba3d6.chunk.js": "/static/js/2.e6dba3d6.chunk.js",
+    "static/js/2.e6dba3d6.chunk.js.map": "/static/js/2.e6dba3d6.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b49236770d88915c16abb3c3843a74d9.js": "/precache-manifest.b49236770d88915c16abb3c3843a74d9.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.1f5941ba.chunk.css.map": "/static/css/2.1f5941ba.chunk.css.map",
+    "static/js/2.e6dba3d6.chunk.js.LICENSE.txt": "/static/js/2.e6dba3d6.chunk.js.LICENSE.txt",
+    "static/media/border.b71839a1.svg": "/static/media/border.b71839a1.svg",
+    "static/media/edinburgh.png": "/static/media/edinburgh.a23698ce.png",
+    "static/media/girl-telescope.png": "/static/media/girl-telescope.30df15ee.png",
+    "static/media/logo.b369e007.svg": "/static/media/logo.b369e007.svg",
+    "static/media/painting.jpg": "/static/media/painting.783766ae.jpg",
+    "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg",
+    "static/media/woman-museum.jpg": "/static/media/woman-museum.9f7bbba0.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6691930f.js",
+    "static/css/2.1f5941ba.chunk.css",
+    "static/js/2.e6dba3d6.chunk.js",
+    "static/js/main.ae1c5aa3.chunk.js"
+  ]
+}
