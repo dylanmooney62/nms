@@ -12,35 +12,42 @@ import Button from '../../components/common/Button';
 
 const SelectTickets = ({ id, navigate, onEnter }) => {
   const { booking, updateBooking } = useContext(BookingContext);
+
   const event = useContext(EventContext);
 
   const { name, shortDescription, closingDate } = event;
 
+  // Update stage nav to tickets
   useEffect(() => {
     onEnter(1);
   }, [onEnter]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    api
-      .post(`book/${id}`, booking)
-      .then(({ data }) => {
-        navigate('../checkout', {
-          state: {
-            clientSecret: data.clientSecret,
-            order: data.order,
-          },
-        });
-      })
-      .catch(({ response }) => {
-        console.log(response);
+    try {
+      // attempt to book event
+      const { data } = await api.post(`book/${id}`, booking);
+
+      // if successful navigate to checkout stage
+      navigate('../checkout', {
+        state: {
+          clientSecret: data.clientSecret,
+          order: data.order,
+        },
       });
+    } catch ({ response }) {
+      console.log(response);
+    }
   };
 
   const handleChange = ({ name }, { value }) => {
     updateBooking({ name, value });
   };
+
+  // Sums total quantity of tickets, if 0 returns false
+  const ticketsSelected =
+    Object.values(booking.tickets).reduce((x, y) => x + y) > 0;
 
   return (
     <StyledSelectTickets onSubmit={handleSubmit}>
@@ -60,7 +67,9 @@ const SelectTickets = ({ id, navigate, onEnter }) => {
         <TicketSelectorList />
       </div>
       <OrderSummary>
-        <Button type="submit">Continue</Button>
+        <Button type="submit" disabled={!ticketsSelected}>
+          Continue
+        </Button>
       </OrderSummary>
     </StyledSelectTickets>
   );

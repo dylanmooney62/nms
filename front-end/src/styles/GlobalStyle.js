@@ -16,8 +16,6 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-
-
   *,
   *::before,
   *::after {

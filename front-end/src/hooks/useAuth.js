@@ -9,12 +9,12 @@ const useAuth = () => {
     api
       .get('auth/user')
       .then(({ data }) => {
-        setUser(data);
+        setUser(data.data);
         setIsLoading(false);
       })
       .catch((error) => {
         console.log(error.response);
-        setUser(null);
+        setUser('error');
         setIsLoading(false);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps

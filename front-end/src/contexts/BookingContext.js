@@ -7,7 +7,7 @@ const BookingContextProvider = ({ children }) => {
   const [booking, setBooking] = useState({
     date: `${format(Date.now(), 'yyyy-MM-dd')}`,
     tickets: {
-      adult: 1,
+      adult: 0,
       child: 0,
       student: 0,
       retired: 0,
