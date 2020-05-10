@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === 'development') {
 // Allow cors
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://nms.codes'],
+    origin: ['http://localhost:3000'],
     credentials: true,
   }),
 );

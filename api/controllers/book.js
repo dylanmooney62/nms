@@ -8,11 +8,13 @@ const Order = require('../models/Order');
 // @access    Public
 const bookEvent = asyncHandler(async (req, res, next) => {
   const order = req.order;
+  const user = req.user;
 
   const paymentIntent = await stripe.paymentIntents.create({
     amount: order.summary.totalPrice,
     currency: 'gbp',
     metadata: { orderId: JSON.stringify(order.id) },
+    receipt_email: user.email,
   });
 
   res.status(201).json({
