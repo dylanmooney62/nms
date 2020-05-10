@@ -83,6 +83,7 @@ const CustomSelect = ({
   label,
   className,
   variant,
+  value,
   ...innerProps
 }) => {
   return (
@@ -94,6 +95,7 @@ const CustomSelect = ({
         options={options}
         defaultValue={options[0]}
         isSearchable={false}
+        value={value}
         {...innerProps}
       />
     </StyledCustomSelect>

@@ -17,7 +17,7 @@ const useEvents = (query) => {
         console.log(error);
         setIsLoading(false);
       });
-  }, []);
+  }, [query]);
 
   return [isLoading, events];
 };

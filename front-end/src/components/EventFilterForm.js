@@ -1,32 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { format } from 'date-fns';
 import styled from 'styled-components';
-import { navigate } from '@reach/router';
-import format from 'date-fns/format';
 import qs from 'query-string';
 import Container from './common/Container';
 import Select from './common/Select';
 import DatePicker from './common/DatePicker';
 import { TYPES, AGES, ADMISSIONS } from '../data/eventFilters';
 
-const EventFilterForm = () => {
+import useDidUpdate from '../hooks/useDidUpdate';
+
+const EventFilterForm = ({ query, onSearch }) => {
+  const queryObj = qs.parse(query);
+
   const [formData, setFormData] = useState({
-    closingDate: `${format(Date.now(), 'yyyy-MM-dd')}`,
-    type: '',
-    ageLimit: '',
-    admission: '',
+    closingDate: queryObj.closingDate || format(Date.now(), 'yyyy-MM-dd'),
+    type: queryObj.type || '',
+    ageLimit: queryObj.ageLimit || '',
+    admission: queryObj.admission || '',
   });
 
   const handleChange = ({ value }, { name }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  useEffect(() => {
+  useDidUpdate(() => {
     const queryString = qs.stringify(formData, {
-      skipNull: true,
       skipEmptyString: true,
+      skipNull: true,
     });
 
-    navigate(`?${queryString}`);
+    onSearch(queryString);
   }, [formData]);
 
   return (

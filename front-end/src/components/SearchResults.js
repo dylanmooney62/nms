@@ -7,11 +7,11 @@ const SearchResults = ({ loading, events }) => {
   return (
     <StyledSearchResults>
       <Container>
-        {!loading && (
+        {!loading && events && (
           <p className="result-count">Showing {events.length} results</p>
         )}
       </Container>
-      <AsyncCardList loading={loading} events={events} />
+      <AsyncCardList loading={loading} events={events || []} />
     </StyledSearchResults>
   );
 };

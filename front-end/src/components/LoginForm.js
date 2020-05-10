@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from '@reach/router';
+import { Link } from '@reach/router';
 import styled from 'styled-components';
 import v from 'validator';
 import api from '../api';
