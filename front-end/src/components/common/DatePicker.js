@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { enGB } from 'date-fns/locale';
 import format from 'date-fns/format';

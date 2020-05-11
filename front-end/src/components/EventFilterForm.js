@@ -6,7 +6,6 @@ import Container from './common/Container';
 import Select from './common/Select';
 import DatePicker from './common/DatePicker';
 import { TYPES, AGES, ADMISSIONS } from '../data/eventFilters';
-
 import useDidUpdate from '../hooks/useDidUpdate';
 
 const EventFilterForm = ({ query, onSearch }) => {
@@ -56,6 +55,9 @@ const EventFilterForm = ({ query, onSearch }) => {
             onChange={handleChange}
             name="type"
             variant="secondary"
+            defaultValue={
+              TYPES[TYPES.findIndex(({ value }) => value === formData.type)]
+            }
           />
           <Select
             className="form-group"
@@ -64,14 +66,24 @@ const EventFilterForm = ({ query, onSearch }) => {
             onChange={handleChange}
             name="ageLimit"
             variant="secondary"
+            defaultValue={
+              AGES[AGES.findIndex(({ value }) => value === formData.ageLimit)]
+            }
           />
           <Select
             className="form-group"
-            options={ADMISSIONS}
-            label="Admission"
-            onChange={handleChange}
-            name="admission"
             variant="secondary"
+            label="Admission"
+            name="admission"
+            onChange={handleChange}
+            options={ADMISSIONS}
+            defaultValue={
+              ADMISSIONS[
+                ADMISSIONS.findIndex(
+                  ({ value }) => value === formData.admission,
+                )
+              ]
+            }
           />
         </form>
       </Container>
