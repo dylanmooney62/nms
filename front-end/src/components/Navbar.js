@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from '@reach/router';
 import styled from 'styled-components';
+import { format } from 'date-fns';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { DrawerContext } from '../contexts/DrawerContext';
+import EventsLink from './common/EventsLink';
 import Container from './common/Container';
 import Logo from './common/Logo';
 
@@ -18,16 +20,16 @@ const Navbar = () => {
         </Link>
         <ul>
           <li>
-            <Link to="/exhibitions-events">Exhibitions & Events</Link>
+            <EventsLink>Exhibitions & Events</EventsLink>
           </li>
           <li>
-            <Link to="/exhibitions-events">Collections</Link>
+            <Link to="/">Collections</Link>
           </li>
           <li>
-            <Link to="/exhibitions-events">Shop</Link>
+            <Link to="/">Shop</Link>
           </li>
           <li>
-            <Link to="/exhibitions-events">Blog</Link>
+            <Link to="/">Blog</Link>
           </li>
         </ul>
         <button type="button" className="hamburger" onClick={toggleDrawer}>

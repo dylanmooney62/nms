@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from '@reach/router';
 import styled from 'styled-components';
 import withSideDrawer from '../hoc/withSideDrawer';
@@ -10,10 +10,13 @@ import EventDetailsSection from '../components/EventDetailsSection';
 import Footer from '../components/Footer';
 import Testimonials from '../components/Testimonials';
 import DiscoverEventsSection from '../components/DiscoverEventsSection';
+import BackBanner from '../components/BackBanner';
+import { SearchHistoryContext } from '../contexts/SearchHistoryContext';
 
 const EventDetail = ({ slug }) => {
   const [isLoading, events] = useEvents(`?slug=${slug}&limit=1`);
   const [eventsLoading, moreEvents] = useEvents(`?slug[ne]=${slug}&limit=2`);
+  const { searchHistory } = useContext(SearchHistoryContext);
 
   const event = events[0];
 
@@ -61,6 +64,7 @@ const EventDetail = ({ slug }) => {
           </Button>
         )}
       </Header>
+      <BackBanner to={searchHistory} />
       <EventDetailsSection
         id={id}
         title={name}

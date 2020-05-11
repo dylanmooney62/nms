@@ -21,7 +21,7 @@ const CollectionSection = () => {
           Eu eu habitant viverra ornare vitae mauris, interdum ut magna.
           Ullamcorper consequat in blandit eros.
         </Text>
-        <Button to="/exhibitions-events" as={Link}>
+        <Button to="/" as={Link}>
           View Collections
         </Button>
       </div>

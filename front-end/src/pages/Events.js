@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import styled from 'styled-components';
+import { SearchHistoryContext } from '../contexts/SearchHistoryContext';
 import withSideDrawer from '../hoc/withSideDrawer';
 import Header from '../components/Header';
 import Title from '../components/common/Title';
@@ -17,40 +18,39 @@ const history = createBrowserHistory();
 const Events = ({ location }) => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { setSearchHistory } = useContext(SearchHistoryContext);
 
-  const handleSearch = async (queryString) => {
-    history.replace({
-      pathname: 'exhibitions-events',
-      search: queryString,
-    });
-
-    const query = `${queryString.replace(
-      /\\?closingDate|closingDate/,
-      'closingDate[gte]',
-    )}&sort=openingDate`;
-
-    const {
-      data: { data: events },
-    } = await api.get(`events?${query}`);
-
-    setEvents(events);
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    if (!history.location.search) {
-      const queryString = `closingDate=${format(Date.now(), 'yyyy-MM-dd')}`;
-
+  const handleSearch = useCallback(
+    async (queryString) => {
       history.replace({
-        pathname: 'exhibitions-events',
+        pathname: '/exhibitions-events',
         search: queryString,
       });
 
+      const query = `${queryString.replace(
+        /\\?closingDate|closingDate/,
+        'closingDate[gte]',
+      )}&sort=openingDate`;
+
+      const {
+        data: { data: events },
+      } = await api.get(`events?${query}`);
+
+      setSearchHistory(history.location.search);
+      setEvents(events);
+      setLoading(false);
+    },
+    [setSearchHistory],
+  );
+
+  useEffect(() => {
+    if (location.state.reload || !history.location.search) {
+      const queryString = `closingDate=${format(Date.now(), 'yyyy-MM-dd')}`;
       handleSearch(queryString);
     } else {
       handleSearch(history.location.search.replace('?', ''));
     }
-  }, []);
+  }, [location.state, handleSearch]);
 
   return (
     <>
@@ -67,7 +67,11 @@ const Events = ({ location }) => {
           </Title>
         </TextBox>
       </Container>
-      <EventFilterForm query={location.search} onSearch={handleSearch} />
+      <EventFilterForm
+        query={history.location.search}
+        onSearch={handleSearch}
+        clear={location.state.reload || null}
+      />
       <SearchResults loading={loading} events={events} />
       <Footer />
     </>

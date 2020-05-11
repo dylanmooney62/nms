@@ -7,8 +7,11 @@ import Select from './common/Select';
 import DatePicker from './common/DatePicker';
 import { TYPES, AGES, ADMISSIONS } from '../data/eventFilters';
 import useDidUpdate from '../hooks/useDidUpdate';
+import Button from './common/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const EventFilterForm = ({ query, onSearch }) => {
+const EventFilterForm = ({ query, onSearch, clear }) => {
   const queryObj = qs.parse(query);
 
   const [formData, setFormData] = useState({
@@ -26,6 +29,19 @@ const EventFilterForm = ({ query, onSearch }) => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleReset = (e) => {
+    if (e) {
+      e.preventDefault();
+    }
+
+    setFormData({
+      closingDate: format(Date.now(), 'yyyy-MM-dd'),
+      type: '',
+      ageLimit: '',
+      admission: '',
+    });
+  };
+
   useDidUpdate(() => {
     const queryString = qs.stringify(formData, {
       skipEmptyString: true,
@@ -34,6 +50,10 @@ const EventFilterForm = ({ query, onSearch }) => {
 
     onSearch(queryString);
   }, [formData]);
+
+  useDidUpdate(() => {
+    handleReset();
+  }, [clear]);
 
   return (
     <StyledEventFilterForm>
@@ -55,7 +75,7 @@ const EventFilterForm = ({ query, onSearch }) => {
             onChange={handleChange}
             name="type"
             variant="secondary"
-            defaultValue={
+            value={
               TYPES[TYPES.findIndex(({ value }) => value === formData.type)]
             }
           />
@@ -66,7 +86,7 @@ const EventFilterForm = ({ query, onSearch }) => {
             onChange={handleChange}
             name="ageLimit"
             variant="secondary"
-            defaultValue={
+            value={
               AGES[AGES.findIndex(({ value }) => value === formData.ageLimit)]
             }
           />
@@ -77,7 +97,7 @@ const EventFilterForm = ({ query, onSearch }) => {
             name="admission"
             onChange={handleChange}
             options={ADMISSIONS}
-            defaultValue={
+            value={
               ADMISSIONS[
                 ADMISSIONS.findIndex(
                   ({ value }) => value === formData.admission,
@@ -85,6 +105,10 @@ const EventFilterForm = ({ query, onSearch }) => {
               ]
             }
           />
+          <ClearButton onClick={handleReset} type="reset">
+            <FontAwesomeIcon className="icon" icon={faTimes} />
+            Clear All
+          </ClearButton>
         </form>
       </Container>
     </StyledEventFilterForm>
@@ -111,6 +135,25 @@ const StyledEventFilterForm = styled.div`
     @media (max-width: 500px) {
       grid-template-columns: repeat(1, 1fr);
     }
+  }
+`;
+
+const ClearButton = styled(Button)`
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  position: absolute;
+  bottom: -${({ theme }) => theme.spacing['7']};
+  right: 0;
+  font-size: 1.6rem;
+
+  &:hover {
+    border: none;
+    background-color: transparent;
+  }
+
+  .icon {
+    margin-right: ${({ theme }) => theme.spacing['2']};
   }
 `;
 

@@ -1,9 +1,9 @@
 import React from 'react';
-
-import { Link } from '@reach/router';
 import styled from 'styled-components';
+import { format } from 'date-fns';
 import SectionTitle from './common/SectionTitle';
 import Button from './common/Button';
+import EventsLink from './common/EventsLink';
 import AsyncCardList from './common/AsyncCardList';
 
 const WhatsOnSection = ({ events, loading }) => {
@@ -21,7 +21,7 @@ const WhatsOnSection = ({ events, loading }) => {
         limit={4}
       />
       <div className="button-container">
-        <Button variant="primary" as={Link} to="/exhibitions-events">
+        <Button variant="primary" as={EventsLink}>
           View All
         </Button>
       </div>

@@ -11,6 +11,7 @@ import DrawerContextProvider from './contexts/DrawerContext';
 import BookingContextProvider from './contexts/BookingContext';
 import AuthContextProvider from './contexts/AuthContext';
 import Booking from './pages/Booking/index';
+import SearchHistoryContextProvider from './contexts/SearchHistoryContext';
 
 function App() {
   return (
@@ -18,17 +19,19 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <DrawerContextProvider>
-          <AuthContextProvider>
-            <BookingContextProvider>
-              <Router>
-                <Home path="/" />
-                <Events path="exhibitions-events" />
-                <EventDetail path="exhibitions-events/:slug" />
-                <Booking path="/book/:id/*" />
-                <NotFound default />
-              </Router>
-            </BookingContextProvider>
-          </AuthContextProvider>
+          <SearchHistoryContextProvider>
+            <AuthContextProvider>
+              <BookingContextProvider>
+                <Router>
+                  <Home path="/" />
+                  <Events path="exhibitions-events" />
+                  <EventDetail path="exhibitions-events/:slug" />
+                  <Booking path="/book/:id/*" />
+                  <NotFound default />
+                </Router>
+              </BookingContextProvider>
+            </AuthContextProvider>
+          </SearchHistoryContextProvider>
         </DrawerContextProvider>
       </ThemeProvider>
     </>
