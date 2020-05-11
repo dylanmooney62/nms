@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
+import { format, fromUnixTime } from 'date-fns';
 import OrderSummary from './OrderSummary';
 import Button from './common/Button';
 import CheckoutOverlay from './CheckoutOverlay';
@@ -69,12 +70,18 @@ const CheckoutForm = ({ clientSecret, order, user, navigate }) => {
       if (result.paymentIntent.status === 'succeeded') {
         setLoading(false);
         // Navigate to order summary
+
+        const { receipt_email, amount, created } = result.paymentIntent;
+
+        const date = format(fromUnixTime(created), 'yyyy-MM-dd');
+
         navigate('../summary', {
           state: {
             summary: {
-              email: 'dylanmooney62@gmail.com',
+              date,
+              email: receipt_email,
               orderNumber: order,
-              date: '04/04/2020',
+              total: amount,
             },
           },
         });

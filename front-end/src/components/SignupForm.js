@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from '@reach/router';
 import styled from 'styled-components';
 import v from 'validator';
 import api from '../api';
@@ -9,14 +8,12 @@ import Input from './common/Input';
 import Button from './common/Button';
 import Alert from './common/Alert';
 
-const SignupForm = () => {
+const SignupForm = ({ navigate }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-
-  const navigate = useNavigate();
 
   const validateForm = () => {
     if (!name) {
