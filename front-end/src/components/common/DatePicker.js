@@ -16,20 +16,18 @@ const CustomDatePicker = ({
   name,
   id,
   variant,
+  startDate,
+  selected,
   ...innerProps
 }) => {
-  const [startDate, setStartDate] = useState(new Date());
-
   const handleChange = (date) => {
-    setStartDate(date);
-    // This format allows it to return the data like react-select for consistency sake
-    onChange({ value: format(date, 'yyyy-MM-dd') }, { name });
+    onChange({ name, value: format(date, 'yyyy-MM-dd') });
   };
 
   return (
     <StyledDatePicker className={className}>
       <DatePicker
-        selected={startDate}
+        selected={selected}
         onChange={(date) => handleChange(date)}
         locale="en-GB"
         formatWeekDay={(nameOfDay) => nameOfDay.substr(0, 3)}
@@ -121,6 +119,10 @@ const StyledDatePicker = styled.div`
       border-radius: 0;
       color: ${({ theme }) => theme.colors['grey-platinum']};
       margin: 0;
+
+      &--keyboard-selected {
+        background-color: inherit;
+      }
 
       &:hover {
         background-color: ${({ theme }) => theme.colors['purple-orchid']};

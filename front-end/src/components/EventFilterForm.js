@@ -23,6 +23,10 @@ const EventFilterForm = ({ query, onSearch }) => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleDateChange = ({ name, value }) => {
+    setFormData({ ...formData, [name]: value });
+  };
+
   useDidUpdate(() => {
     const queryString = qs.stringify(formData, {
       skipEmptyString: true,
@@ -40,9 +44,10 @@ const EventFilterForm = ({ query, onSearch }) => {
             className="form-group"
             label="Date"
             name="closingDate"
-            onChange={handleChange}
-            minDate={Date.now()}
             variant="secondary"
+            minDate={Date.now()}
+            selected={new Date(formData.closingDate)}
+            onChange={handleDateChange}
           />
           <Select
             className="form-group"

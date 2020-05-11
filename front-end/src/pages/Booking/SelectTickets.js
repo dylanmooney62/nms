@@ -41,7 +41,7 @@ const SelectTickets = ({ id, navigate, onEnter }) => {
     }
   };
 
-  const handleChange = ({ name }, { value }) => {
+  const handleChange = ({ name, value }) => {
     updateBooking({ name, value });
   };
 
@@ -59,10 +59,11 @@ const SelectTickets = ({ id, navigate, onEnter }) => {
         <DatePicker
           className="date-picker"
           label="Visiting Date"
-          minDate={Date.now()}
-          maxDate={new Date(closingDate)}
           onChange={handleChange}
           name="date"
+          minDate={Date.now()}
+          maxDate={new Date(closingDate)}
+          selected={new Date(booking.date)}
         />
         <TicketSelectorList />
       </div>
