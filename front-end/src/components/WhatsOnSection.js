@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { format } from 'date-fns';
 import SectionTitle from './common/SectionTitle';
 import Button from './common/Button';
 import EventsLink from './common/EventsLink';

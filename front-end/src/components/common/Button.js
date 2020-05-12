@@ -40,6 +40,7 @@ const Button = styled.button`
       :hover {
         background-color: ${({ theme }) => theme.colors.white};
         color: ${({ theme }) => theme.colors['purple-orchid']};
+        border: 0.2rem solid ${({ theme }) => theme.colors.white};
       }
     `};
 `;

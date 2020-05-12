@@ -150,6 +150,7 @@ const ClearButton = styled(Button)`
   &:hover {
     border: none;
     background-color: transparent;
+    opacity: 0.8;
   }
 
   .icon {

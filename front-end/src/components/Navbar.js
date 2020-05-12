@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from '@reach/router';
 import styled from 'styled-components';
-import { format } from 'date-fns';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { DrawerContext } from '../contexts/DrawerContext';

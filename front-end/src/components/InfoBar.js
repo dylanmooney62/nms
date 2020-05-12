@@ -13,7 +13,12 @@ const InfoBar = () => (
     <Container variant="large">
       <div className="info-item">
         <FontAwesomeIcon className="icon" icon={faClock} />
-        <span>Open: 10:00am - 5:00pm</span>
+        <span>
+          Open:
+          <time dateTime="20:00"> 10:00am</time>
+          <span> - </span>
+          <time dateTime="17:00">5:00pm</time>
+        </span>
       </div>
       <div className="info-item">
         <FontAwesomeIcon className="icon" icon={faCompass} />
@@ -21,12 +26,7 @@ const InfoBar = () => (
       </div>
       <div className="info-item">
         <FontAwesomeIcon className="icon" icon={faAddressBook} />
-        <span>
-          Open:
-          <time dateTime="20:00"> 10:00am</time>
-          <span>-</span>
-          <time dateTime="17:00">5:00pm</time>
-        </span>
+        0300 123 63390
       </div>
     </Container>
   </StyledInfoBar>

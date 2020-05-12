@@ -5,26 +5,29 @@ import SectionTitle from './common/SectionTitle';
 import Text from './common/Text';
 import Button from './common/Button';
 import painting from '../assets/images/painting.jpg';
+import Container from './common/Container';
 
 const CollectionSection = () => {
   return (
     <StyledCollectionSection>
-      <div className="text-box">
-        <SectionTitle
-          align="left"
-          title="Discover our Collections"
-          subtitle="Explore"
-        />
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum
-          rhoncus ornare erat nibh. Augue in erat enim eu mauris fermentum quis.
-          Eu eu habitant viverra ornare vitae mauris, interdum ut magna.
-          Ullamcorper consequat in blandit eros.
-        </Text>
-        <Button to="/" as={Link}>
-          View Collections
-        </Button>
-      </div>
+      <Container>
+        <div className="text-box">
+          <SectionTitle
+            align="left"
+            title="Discover our Collections"
+            subtitle="Explore"
+          />
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum
+            rhoncus ornare erat nibh. Augue in erat enim eu mauris fermentum
+            quis. Eu eu habitant viverra ornare vitae mauris, interdum ut magna.
+            Ullamcorper consequat in blandit eros.
+          </Text>
+          <Button to="/" as={Link}>
+            View Collections
+          </Button>
+        </div>
+      </Container>
       <div className="bg-image">
         <img className="painting" src={painting} alt="" />
       </div>
@@ -36,11 +39,22 @@ export default CollectionSection;
 
 const StyledCollectionSection = styled.section`
   background-color: rgba(126, 42, 175, 0.1);
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 44vw;
   min-height: ${({ theme }) => theme.spacing['16']};
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    height: unset;
+    min-height: unset;
+  }
+
+  ${Container} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .text-box {
     margin: 0 auto;
@@ -50,6 +64,19 @@ const StyledCollectionSection = styled.section`
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+
+    @media (max-width: 1024px) {
+      padding: 0;
+      padding-top: ${({ theme }) => theme.spacing['11']};
+      padding-bottom: ${({ theme }) => theme.spacing['11']};
+      max-width: unset;
+      width: 100%;
+    }
+
+    @media (max-width: 570px) {
+      padding-top: ${({ theme }) => theme.spacing['9']};
+      padding-bottom: ${({ theme }) => theme.spacing['9']};
+    }
   }
 
   ${Text} {
@@ -61,8 +88,11 @@ const StyledCollectionSection = styled.section`
     background-position: center;
     background-size: cover;
     display: block;
-
     position: relative;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
 
     &:after {
       content: '';

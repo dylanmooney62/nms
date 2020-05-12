@@ -59,13 +59,17 @@ const StyledMembershipCta = styled.section`
     padding-top: ${({ theme }) => theme.spacing['11']};
     padding-bottom: ${({ theme }) => theme.spacing['11']};
 
-    @media (max-width: 1140px) {
-      margin: 0 auto;
+    @media (max-width: 1024px) {
+      padding: 0;
+      padding-top: ${({ theme }) => theme.spacing['11']};
+      padding-bottom: ${({ theme }) => theme.spacing['11']};
+      max-width: unset;
+      width: 100%;
     }
 
     @media (max-width: 570px) {
-      padding-top: ${({ theme }) => theme.spacing['8']};
-      padding-bottom: ${({ theme }) => theme.spacing['8']};
+      padding-top: ${({ theme }) => theme.spacing['9']};
+      padding-bottom: ${({ theme }) => theme.spacing['9']};
     }
   }
 
