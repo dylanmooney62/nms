@@ -8,7 +8,7 @@ import Title from './common/Title';
 import Input from './common/Input';
 import Button from './common/Button';
 
-const LoginForm = ({ navigate }) => {
+const LoginForm = ({ navigate, className }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -49,7 +49,7 @@ const LoginForm = ({ navigate }) => {
   };
 
   return (
-    <StyledLoginForm onSubmit={handleSubmit}>
+    <StyledLoginForm onSubmit={handleSubmit} className={className}>
       <Title variant="h4" as="h2" color="secondary">
         Members Login
       </Title>

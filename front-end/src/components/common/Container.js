@@ -30,7 +30,12 @@ const Container = Styled.div`
       padding: 0 ${({ theme }) => theme.spacing['5']};
 
       @media (max-width: 1024px) {
-        width: 66%;
+        width: 80%;
+        padding: 0;
+      }
+
+      @media (max-width: 425px) {
+        width: 85%;
         padding: 0;
       }
     `}

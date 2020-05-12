@@ -8,7 +8,7 @@ import Title from './common/Title';
 import Input from './common/Input';
 import Button from './common/Button';
 
-const SignupForm = ({ navigate }) => {
+const SignupForm = ({ navigate, className }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -65,7 +65,7 @@ const SignupForm = ({ navigate }) => {
   };
 
   return (
-    <StyledSignupForm>
+    <StyledSignupForm className={className}>
       <form onSubmit={handleSubmit}>
         <Title variant="h4" as="h2" color="white">
           Create an account
