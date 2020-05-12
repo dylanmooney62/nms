@@ -52,7 +52,9 @@ const EventFilterForm = ({ query, onSearch, clear }) => {
   }, [formData]);
 
   useDidUpdate(() => {
-    handleReset();
+    if (clear) {
+      handleReset();
+    }
   }, [clear]);
 
   return (

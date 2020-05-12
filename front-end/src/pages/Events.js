@@ -70,7 +70,7 @@ const Events = ({ location }) => {
       <EventFilterForm
         query={history.location.search}
         onSearch={handleSearch}
-        clear={location.state.reload || null}
+        clear={location?.state?.reload || false}
       />
       <SearchResults loading={loading} events={events} />
       <Footer />
