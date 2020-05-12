@@ -47,7 +47,7 @@ const TicketSelector = ({ type, quantity, max, min, price, onChange }) => {
 
   return (
     <StyledTicketSelector>
-      <Border className="border" />
+      <Border className="border" width="100%" />
       <div className="ticket-info">
         <Title variant="h4" as="h2">
           {type}

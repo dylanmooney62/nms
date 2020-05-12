@@ -104,6 +104,16 @@ const StyledSelectTickets = styled.form`
 
     @media (max-width: 768px) {
       margin-bottom: ${({ theme }) => theme.spacing['6']};
+
+      max-width: unset;
+      width: 80%;
+    }
+
+    @media (max-width: 425px) {
+      margin-bottom: ${({ theme }) => theme.spacing['6']};
+
+      max-width: unset;
+      width: 100%;
     }
   }
 

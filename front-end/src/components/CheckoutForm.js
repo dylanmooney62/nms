@@ -116,9 +116,21 @@ const StyledCheckoutForm = styled.form`
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
   .details {
     width: 100%;
     max-width: 46rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: ${({ theme }) => theme.spacing['6']};
+      max-width: unset;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   .details-title {
@@ -134,10 +146,18 @@ const StyledCheckoutForm = styled.form`
     color: ${({ theme }) => theme.colors['grey-granite']};
 
     margin-bottom: ${({ theme }) => theme.spacing['4']};
+
+    @media (max-width: 768px) {
+      margin-bottom: ${({ theme }) => theme.spacing['6']};
+    }
   }
 
   ${Text} {
     font-weight: 600;
+
+    @media (max-width: 768px) {
+      margin-bottom: ${({ theme }) => theme.spacing['3']};
+    }
   }
 `;
 
