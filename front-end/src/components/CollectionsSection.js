@@ -42,6 +42,7 @@ const StyledCollectionSection = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 44vw;
+  max-height: 100rem;
   min-height: ${({ theme }) => theme.spacing['16']};
 
   @media (max-width: 1024px) {
