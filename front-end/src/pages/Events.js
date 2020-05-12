@@ -44,7 +44,7 @@ const Events = ({ location }) => {
   );
 
   useEffect(() => {
-    if (location.state.reload || !history.location.search) {
+    if (location?.state?.reload || !history.location.search) {
       const queryString = `closingDate=${format(Date.now(), 'yyyy-MM-dd')}`;
       handleSearch(queryString);
     } else {
