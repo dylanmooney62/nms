@@ -13,6 +13,7 @@ const Checkout = ({ onEnter, location, user, navigate }) => {
     onEnter(2);
   }, [onEnter]);
 
+  // Check there is a client secret and booking for the order
   if (!location.state) {
     return <Redirect from="" to="../tickets" noThrow />;
   }

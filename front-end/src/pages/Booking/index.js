@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Router } from '@reach/router';
 import styled from 'styled-components';
 import useEvents from '../../hooks/useEvents';
 import { EventContext } from '../../contexts/EventContext';
+import { BookingContext } from '../../contexts/BookingContext';
 import SelectTickets from './SelectTickets';
+import api from '../../api';
 import Login from './Login';
 import Checkout from './Checkout';
 import Summary from './Summary';
@@ -14,6 +16,15 @@ import Container from '../../components/common/Container';
 const Booking = ({ id }) => {
   const [isLoading, event] = useEvents(`/${id}`);
   const [stage, setStage] = useState(-1);
+  const { clearBooking } = useContext(BookingContext);
+
+  // Reset booking and log out user if they leave the booking page
+  useEffect(() => {
+    return () => {
+      clearBooking(); // Clear token cookie
+      api.get('auth/logout');
+    };
+  }, [clearBooking]);
 
   if (isLoading) {
     return <div>Loading...</div>;

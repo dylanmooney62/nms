@@ -6,7 +6,7 @@ const theme = {
     'grey-licorice': '#222222',
     'grey-raisin': '#292929',
     'grey-granite': '#666666',
-    'grey-platinum': '#ECECEC',
+    'grey-platinum': '#dfe1e5',
     danger: {
       dark: '#FF0027',
       medium: '#FDAFBB',

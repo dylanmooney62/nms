@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect } from 'react';
+import React, { useState, createContext, useEffect, useCallback } from 'react';
 import { format } from 'date-fns';
 
 export const BookingContext = createContext();
@@ -37,7 +37,7 @@ const BookingContextProvider = ({ children }) => {
     });
   };
 
-  const clearBooking = () => {
+  const clearBooking = useCallback(() => {
     setBooking({
       date: `${format(Date.now(), 'yyyy-MM-dd')}`,
       tickets: {
@@ -47,7 +47,7 @@ const BookingContextProvider = ({ children }) => {
         retired: 0,
       },
     });
-  };
+  }, []);
 
   return (
     <BookingContext.Provider

@@ -37,6 +37,11 @@ const StyledInput = styled.div`
     min-height: 4.1rem;
     padding-left: ${({ theme }) => theme.spacing['3']};
     border: 0.1rem solid ${({ theme }) => theme.colors['grey-platinum']};
+    color: ${({ theme }) => theme.colors['grey-raisin']};
+
+    ::placeholder {
+      color: ${({ theme }) => theme.colors['grey-granite']};
+    }
   }
 
   .icon {
@@ -59,6 +64,10 @@ const StyledInput = styled.div`
         background-color: transparent;
         color: ${({ theme }) => theme.colors.white};
         border: 0.1rem solid ${({ theme }) => theme.colors.white};
+
+        ::placeholder {
+          color: rgba(255, 255, 255, 0.8);
+        }
 
         &:hover {
           border-color: ${({ theme }) => theme.colors['grey-platinum']};

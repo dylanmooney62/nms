@@ -5,29 +5,22 @@ import { format, fromUnixTime } from 'date-fns';
 import OrderSummary from './OrderSummary';
 import Button from './common/Button';
 import CheckoutOverlay from './CheckoutOverlay';
-
-const CARD_ELEMENT_OPTIONS = {
-  style: {
-    base: {
-      color: '#32325d',
-      fontFamily: '"Open Sans", Helvetica, sans-serif',
-      fontSmoothing: 'antialiased',
-      fontSize: '16px',
-      '::placeholder': {
-        color: '#aab7c4',
-      },
-    },
-    invalid: {
-      color: '#fa755a',
-      iconColor: '#fa755a',
-    },
-  },
-};
+import Title from './common/Title';
+import Text from './common/Text';
 
 const CheckoutForm = ({ clientSecret, order, user, navigate }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
+  const [disabled, setDisabled] = useState(true);
+
+  const handleCardChange = ({ complete }) => {
+    if (complete) {
+      setDisabled(false);
+    } else if (!disabled) {
+      setDisabled(true);
+    }
+  };
 
   const handleSubmit = async (e) => {
     // We don't want to let default form submission happen here,
@@ -65,7 +58,11 @@ const CheckoutForm = ({ clientSecret, order, user, navigate }) => {
 
     if (result.error) {
       console.log(result.error.message);
+
+      setLoading(false);
     } else {
+      console.log(result.paymentIntent.status);
+
       // The payment has been processed!
       if (result.paymentIntent.status === 'succeeded') {
         setLoading(false);
@@ -86,8 +83,6 @@ const CheckoutForm = ({ clientSecret, order, user, navigate }) => {
           },
         });
       }
-
-      console.log(result.paymentIntent);
     }
   };
 
@@ -96,11 +91,17 @@ const CheckoutForm = ({ clientSecret, order, user, navigate }) => {
       {loading && <CheckoutOverlay />}
       <StyledCheckoutForm onSubmit={handleSubmit}>
         <div className="details">
-          <CardElement options={CARD_ELEMENT_OPTIONS} />
+          <Title className="details-title" as="h1" variant="h3">
+            Payment Details
+          </Title>
+          <CardElement className="card-element" onChange={handleCardChange} />
+          <Text>NO AUTH TEST CARD: 4242 4242 4242 4242</Text>
+          <Text>AUTHENTICATION TEST CARD: 4000 0025 0000 3155</Text>
+          <Text>INSUFFICIENT FUNDS TEST CARD: 4000 0000 0000 9995</Text>
         </div>
         <OrderSummary buttonText="Confirm Payment">
-          <Button type="submit" disabled={!stripe}>
-            Confirm
+          <Button type="submit" disabled={!stripe || disabled}>
+            Confirm payment
           </Button>
         </OrderSummary>
       </StyledCheckoutForm>
@@ -115,6 +116,25 @@ const StyledCheckoutForm = styled.form`
   .details {
     width: 100%;
     max-width: 46rem;
+  }
+
+  .details-title {
+    margin-bottom: ${({ theme }) => theme.spacing['6']};
+  }
+
+  .card-element {
+    border: 0.1rem solid red;
+    min-height: 4.1rem;
+    padding: ${({ theme }) => theme.spacing['3']};
+    border: 0.1rem solid ${({ theme }) => theme.colors['grey-platinum']};
+    font-size: 1.2rem;
+    color: ${({ theme }) => theme.colors['grey-granite']};
+
+    margin-bottom: ${({ theme }) => theme.spacing['4']};
+  }
+
+  ${Text} {
+    font-weight: 600;
   }
 `;
 
