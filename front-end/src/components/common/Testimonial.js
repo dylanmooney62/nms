@@ -55,8 +55,24 @@ const StyledTestimonial = styled.div`
     font-size: 4.8rem;
     color: ${({ theme }) => theme.colors.white};
 
+    @media (max-width: 768px) {
+      font-size: 4rem;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 3.6rem;
+    }
+
     &:not(:last-child) {
       margin-right: ${({ theme }) => theme.spacing['7']};
+
+      @media (max-width: 768px) {
+        margin-right: ${({ theme }) => theme.spacing['6']};
+      }
+
+      @media (max-width: 425px) {
+        margin-right: ${({ theme }) => theme.spacing['4']};
+      }
     }
   }
 `;
