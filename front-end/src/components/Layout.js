@@ -5,12 +5,20 @@ import SideDrawer from './SideDrawer';
 import { DrawerContext } from '../contexts/DrawerContext';
 
 const Layout = ({ children }) => {
-  const { isOpen } = useContext(DrawerContext);
+  const { isOpen, toggleDrawer } = useContext(DrawerContext);
+
+  const handleClick = () => {
+    if (isOpen) {
+      toggleDrawer();
+    }
+  };
 
   return (
     <StyledLayout drawerOpen={isOpen}>
       <div className="page">
-        <div className="content">{children}</div>
+        <div className="content" onClick={handleClick}>
+          {children}
+        </div>
         <SideDrawer />
       </div>
     </StyledLayout>
@@ -35,12 +43,14 @@ const StyledLayout = styled.div`
     display: flex;
     transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
-    ${(props) =>
-      props.drawerOpen &&
-      css`
-        /* width of drawer */
-        transform: translateX(-25.5rem);
-      `}
+    @media (max-width: 1024px) {
+      ${(props) =>
+        props.drawerOpen &&
+        css`
+          /* width of drawer */
+          transform: translateX(-25.5rem);
+        `}
+    }
   }
 
   .drawer-container {
@@ -52,5 +62,29 @@ const StyledLayout = styled.div`
     position: relative;
     z-index: 100;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease-in-out;
+
+    ${({ drawerOpen }) =>
+      drawerOpen &&
+      css`
+        &::after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: rgba(255, 255, 255, 0.2);
+          z-index: 200;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          &::after {
+            background-color: rgba(255, 255, 255, 0.15);
+          }
+        }
+      `}
   }
 `;

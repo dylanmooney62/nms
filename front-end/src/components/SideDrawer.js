@@ -1,34 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Link } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { DrawerContext } from '../contexts/DrawerContext';
 
 const SideDrawer = () => {
+  const { toggleDrawer } = useContext(DrawerContext);
+
+  const handleClick = () => {
+    toggleDrawer();
+  };
+
   return (
     <StyledSideDrawer>
       <div className="drawer">
         <ul>
           <li>
-            <Link to="/exhibitions-events">
+            <Link to="/exhibitions-events" onClick={handleClick}>
               <span>Exhibitions & Events</span>
               <FontAwesomeIcon icon={faChevronRight} />
             </Link>
           </li>
           <li>
-            <Link to="/exhibitions-events">
+            <Link to="/" onClick={handleClick}>
               <span>Collections</span>
               <FontAwesomeIcon icon={faChevronRight} />
             </Link>
           </li>
           <li>
-            <Link to="/exhibitions-events">
+            <Link to="/" onClick={handleClick}>
               <span>Shop</span>
               <FontAwesomeIcon icon={faChevronRight} />
             </Link>
           </li>
           <li>
-            <Link to="/exhibitions-events">
+            <Link to="/" onClick={handleClick}>
               <span>Blog</span>
               <FontAwesomeIcon icon={faChevronRight} />
             </Link>
