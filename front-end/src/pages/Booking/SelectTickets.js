@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { BookingContext } from '../../contexts/BookingContext';
 import { EventContext } from '../../contexts/EventContext';
 import api from '../../api/index';
@@ -9,6 +10,7 @@ import DatePicker from '../../components/common/DatePicker';
 import TicketSelectorList from '../../components/common/TicketSelectorList';
 import OrderSummary from '../../components/OrderSummary';
 import Button from '../../components/common/Button';
+import CustomLink from '../../components/common/CustomLink';
 
 const SelectTickets = ({ id, navigate, onEnter }) => {
   const { booking, updateBooking } = useContext(BookingContext);
@@ -66,6 +68,13 @@ const SelectTickets = ({ id, navigate, onEnter }) => {
           selected={new Date(booking.date)}
         />
         <TicketSelectorList />
+        <CustomLink
+          to="../"
+          icon={faChevronLeft}
+          style={{ marginTop: '6.4rem' }}
+        >
+          Back
+        </CustomLink>
       </div>
       <OrderSummary>
         <Button type="submit" disabled={!ticketsSelected}>
