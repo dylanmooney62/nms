@@ -39,6 +39,7 @@ const SelectTickets = ({ id, navigate, onEnter }) => {
         },
       });
     } catch ({ response }) {
+      // TODO: ADD TOASTY ERROR
       console.log(response);
     }
   };
@@ -68,6 +69,13 @@ const SelectTickets = ({ id, navigate, onEnter }) => {
           selected={new Date(booking.date)}
         />
         <TicketSelectorList />
+      </div>
+      <OrderSummary>
+        <Button type="submit" disabled={!ticketsSelected}>
+          Continue
+        </Button>
+      </OrderSummary>
+      <div style={{ width: '100%' }}>
         <CustomLink
           to="../"
           icon={faChevronLeft}
@@ -76,11 +84,6 @@ const SelectTickets = ({ id, navigate, onEnter }) => {
           Back
         </CustomLink>
       </div>
-      <OrderSummary>
-        <Button type="submit" disabled={!ticketsSelected}>
-          Continue
-        </Button>
-      </OrderSummary>
     </StyledSelectTickets>
   );
 };
@@ -88,10 +91,20 @@ const SelectTickets = ({ id, navigate, onEnter }) => {
 const StyledSelectTickets = styled.form`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   .select-tickets {
     max-width: 46rem;
-    margin-right: auto;
+
+    @media (max-width: 768px) {
+      margin-bottom: ${({ theme }) => theme.spacing['6']};
+    }
   }
 
   ${Title} {
@@ -104,6 +117,10 @@ const StyledSelectTickets = styled.form`
 
   .date-picker {
     margin-bottom: ${({ theme }) => theme.spacing['8']};
+
+    @media (max-width: 768px) {
+      margin-bottom: ${({ theme }) => theme.spacing['6']};
+    }
   }
 `;
 

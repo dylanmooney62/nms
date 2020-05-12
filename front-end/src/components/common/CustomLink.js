@@ -20,6 +20,7 @@ const StyledCustomLink = styled(Link)`
   font-weight: 600;
   display: flex;
   align-items: center;
+  display: inline-block;
 
   &:hover {
     color: ${({ theme }) => theme.colors['purple-regalia']};

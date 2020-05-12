@@ -171,6 +171,14 @@ const StyledTicketSelector = styled.div`
     line-height: 1;
     border: 0.1rem solid ${({ theme }) => theme.colors['grey-platinum']};
     color: ${({ theme }) => theme.colors['grey-raisin']};
+
+    @media (max-width: 425px) {
+      margin-left: 10%;
+      margin-right: 10%;
+      padding-top: ${({ theme }) => theme.spacing['2']};
+      padding-bottom: ${({ theme }) => theme.spacing['2']};
+      width: 33.33%;
+    }
   }
 
   .ticket-price {

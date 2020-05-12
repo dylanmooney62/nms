@@ -53,6 +53,10 @@ const StyledOrderSummary = styled.div`
   border-radius: 0.1rem;
   align-self: flex-start;
 
+  @media (max-width: 768px) {
+    align-self: center;
+  }
+
   .order-summary-top {
     min-height: ${({ theme }) => theme.spacing['12']};
     padding: ${({ theme }) => theme.spacing['3']};
@@ -75,7 +79,6 @@ const StyledOrderSummary = styled.div`
 
   .ticket {
     color: ${({ theme }) => theme.colors['purple-orchid']};
-
     text-transform: capitalize;
   }
 
