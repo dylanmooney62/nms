@@ -34,6 +34,10 @@ const StyledStageNav = styled.nav`
   padding: ${({ theme }) => theme.spacing['8']} 0;
   border-top: 0.1rem solid rgba(255, 255, 255, 0.4);
 
+  @media (max-width: 768px) {
+    padding: ${({ theme }) => theme.spacing['7']} 0;
+  }
+
   @media (max-width: 425px) {
     padding: ${({ theme }) => theme.spacing['6']} 0;
   }
