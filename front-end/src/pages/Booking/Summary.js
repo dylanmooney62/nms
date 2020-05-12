@@ -62,6 +62,11 @@ const StyledSummary = styled.div`
   max-width: 50rem;
   margin: 0 auto;
 
+  @media (max-width: 425px) {
+    width: 100%;
+    max-width: unset;
+  }
+
   .circle {
     background-color: ${({ theme }) => theme.colors['purple-orchid']};
     width: ${({ theme }) => theme.spacing['8']};
@@ -88,6 +93,10 @@ const StyledSummary = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: ${({ theme }) => theme.spacing['8']};
+
+    @media (max-width: 425px) {
+      margin-bottom: ${({ theme }) => theme.spacing['7']};
+    }
   }
 
   .summary-list {
@@ -102,16 +111,29 @@ const StyledSummary = styled.div`
     grid-template-columns: 16.3rem max-content;
     justify-content: space-between;
 
+    @media (max-width: 425px) {
+      grid-template-columns: 1fr;
+    }
+
     &:not(:last-child) {
       margin-bottom: ${({ theme }) => theme.spacing['6']};
     }
 
     dt {
       text-align: right;
+
+      @media (max-width: 425px) {
+        text-align: center;
+        margin-bottom: ${({ theme }) => theme.spacing['3']};
+      }
     }
 
     dd {
       font-weight: 600;
+
+      @media (max-width: 425px) {
+        text-align: center;
+      }
     }
   }
 
