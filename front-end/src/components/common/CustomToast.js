@@ -9,7 +9,7 @@ const CustomToast = () => {
 
 const StyledCustomToast = styled(ToastContainer)`
   .Toastify__toast {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-family: ${({ theme }) => theme.typography.body};
   }
 

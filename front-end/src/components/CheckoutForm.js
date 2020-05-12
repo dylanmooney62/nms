@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { format, fromUnixTime } from 'date-fns';
+import { toast } from 'react-toastify';
 import OrderSummary from './OrderSummary';
 import Button from './common/Button';
 import CheckoutOverlay from './CheckoutOverlay';
@@ -57,7 +58,9 @@ const CheckoutForm = ({ clientSecret, order, user, navigate }) => {
     });
 
     if (result.error) {
-      console.log(result.error.message);
+      toast.error(result.error.message, {
+        id: 'strip-error',
+      });
 
       setLoading(false);
     } else {
