@@ -34,6 +34,10 @@ const StyledStageNav = styled.nav`
   padding: ${({ theme }) => theme.spacing['8']} 0;
   border-top: 0.1rem solid rgba(255, 255, 255, 0.4);
 
+  @media (max-width: 425px) {
+    padding: ${({ theme }) => theme.spacing['6']} 0;
+  }
+
   ul {
     list-style: none;
     display: flex;
@@ -57,6 +61,10 @@ const StageItem = styled.li`
   text-decoration: none;
   opacity: 0.5;
   transition: all 0.3s ease-in-out;
+
+  @media (max-width: 425px) {
+    font-size: 1.2rem;
+  }
 
   ${({ active }) =>
     active &&
