@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
 import v from 'validator';
 import api from '../api';
 import { primaryGradient } from '../styles/mixins';
 import Title from './common/Title';
 import Input from './common/Input';
 import Button from './common/Button';
-import Alert from './common/Alert';
 
 const SignupForm = ({ navigate }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState('');
 
   const validateForm = () => {
     if (!name) {
@@ -33,47 +32,40 @@ const SignupForm = ({ navigate }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let message = validateForm();
+    let errorMessage = validateForm();
 
-    if (message) {
-      setError(message);
-      setTimeout(() => setError(null), 5000);
-    } else {
-      api
-        .post('auth/register', {
-          name,
-          email,
-          password,
-        })
-        .then(() => {
-          navigate('checkout');
-        })
-        .catch(({ response }) => {
-          message = response.data.error;
+    if (errorMessage) {
+      toast.error(errorMessage, {
+        toastId: 'signup-error',
+      });
+      return;
+    }
 
-          if (message === 'Duplicate field value entered') {
-            message = 'User with email already exists';
-          }
+    try {
+      await api.post('auth/register', {
+        name,
+        email,
+        password,
+      });
 
-          setError(message);
-          setTimeout(() => setError(null), 5000);
-        });
+      navigate('tickets');
+    } catch ({ response }) {
+      console.log(response);
+
+      const error = response.data.error;
+      if (error === 'Duplicate field value entered') {
+        toast.error('User with email already exists');
+      } else {
+        toast.error(error);
+      }
     }
   };
 
   return (
     <StyledSignupForm>
-      {error && (
-        <Alert
-          variant="danger"
-          style={{ display: 'block', marginBottom: '1.6rem' }}
-        >
-          {error}
-        </Alert>
-      )}
       <form onSubmit={handleSubmit}>
         <Title variant="h4" as="h2" color="white">
           Create an account
@@ -96,7 +88,7 @@ const SignupForm = ({ navigate }) => {
           variant="secondary"
           type="email"
           name="email"
-          id="sign-up-email"
+          id="signup-email"
           label="Email"
           placeholder="Email"
           autoComplete="on"
@@ -109,7 +101,7 @@ const SignupForm = ({ navigate }) => {
           className="input"
           type="password"
           name="password"
-          id="sign-up-password"
+          id="signup-password"
           label="Password"
           placeholder="Password"
           autoComplete="off"
@@ -139,14 +131,9 @@ const SignupForm = ({ navigate }) => {
     </StyledSignupForm>
   );
 };
-
 const StyledSignupForm = styled.div`
   width: 100%;
   max-width: 40rem;
-
-  ${Alert} {
-    margin-bottom: ${({ theme }) => theme.spacing['4']};
-  }
 
   form {
     padding: ${({ theme }) => theme.spacing['5']};

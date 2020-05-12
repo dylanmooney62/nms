@@ -8,7 +8,7 @@ const theme = {
     'grey-granite': '#666666',
     'grey-platinum': '#dfe1e5',
     danger: {
-      dark: '#FF0027',
+      dark: '#CD2D46',
       medium: '#FDAFBB',
       light: '#FBE4E8',
     },

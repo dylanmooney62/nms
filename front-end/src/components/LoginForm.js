@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from '@reach/router';
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
 import v from 'validator';
 import api from '../api';
 import Title from './common/Title';
 import Input from './common/Input';
 import Button from './common/Button';
-import Alert from './common/Alert';
 
 const LoginForm = ({ navigate }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
 
   const validateForm = () => {
     if (!email || !v.isEmail(email)) {
@@ -23,34 +22,34 @@ const LoginForm = ({ navigate }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let message = validateForm();
+    let errorMessage = validateForm();
 
-    if (message) {
-      setError(message);
-      setTimeout(() => setError(null), 5000);
-    } else {
-      api
-        .post('auth/login', {
-          email,
-          password,
-        })
-        .then((res) => {
-          navigate('tickets');
-        })
-        .catch(({ response }) => {
-          message = response.data.error;
-          setError(message);
-          setTimeout(() => setError(null), 5000);
-        });
+    if (errorMessage) {
+      toast.error(errorMessage, {
+        toastId: 'login-error',
+      });
+      return;
+    }
+
+    try {
+      await api.post('auth/login', {
+        email,
+        password,
+      });
+
+      navigate('tickets');
+    } catch ({ response }) {
+      toast.error(response.data.error, {
+        toastId: 'login-error',
+      });
     }
   };
 
   return (
     <StyledLoginForm onSubmit={handleSubmit}>
-      {error && <Alert variant="danger">{error}</Alert>}
       <Title variant="h4" as="h2" color="secondary">
         Members Login
       </Title>
@@ -64,6 +63,7 @@ const LoginForm = ({ navigate }) => {
         autoComplete="on"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
+        required={true}
       />
       <Input
         className="input"
@@ -75,6 +75,7 @@ const LoginForm = ({ navigate }) => {
         autoComplete="on"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
+        required={true}
       />
       <div className="form-bottom">
         <Link to="/forgotpassword" className="forgot-password">
@@ -91,10 +92,6 @@ const StyledLoginForm = styled.form`
   max-width: 40rem;
   padding: ${({ theme }) => theme.spacing['5']};
   border-radius: 0.1rem;
-
-  ${Alert} {
-    margin-bottom: ${({ theme }) => theme.spacing['4']};
-  }
 
   ${Title} {
     margin-bottom: ${({ theme }) => theme.spacing['5']};

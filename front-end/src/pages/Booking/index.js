@@ -12,6 +12,7 @@ import Summary from './Summary';
 import ProtectedRoute from '../../components/common/ProtectedRoute';
 import BookingHeader from '../../components/BookingHeader';
 import Container from '../../components/common/Container';
+import CustomToast from '../../components/common/CustomToast';
 
 const Booking = ({ id }) => {
   const [isLoading, event] = useEvents(`/${id}`);
@@ -41,6 +42,7 @@ const Booking = ({ id }) => {
 
   return (
     <StyledBooking>
+      <CustomToast />
       <BookingHeader stage={stage} />
       <Container className="main" variant="small" as="main">
         <EventContext.Provider value={event}>
