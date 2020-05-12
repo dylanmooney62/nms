@@ -13,7 +13,10 @@ const bookEvent = asyncHandler(async (req, res, next) => {
   const paymentIntent = await stripe.paymentIntents.create({
     amount: order.summary.totalPrice,
     currency: 'gbp',
-    metadata: { orderId: JSON.stringify(order.id) },
+    metadata: {
+      orderId: JSON.stringify(order.id),
+      integration_check: 'accept_a_payment',
+    },
     receipt_email: user.email,
   });
 
