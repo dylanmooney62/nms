@@ -84,6 +84,7 @@ const CheckoutForm = ({ clientSecret, order, user, navigate }) => {
               total: amount,
             },
           },
+          replace: true,
         });
       }
     }

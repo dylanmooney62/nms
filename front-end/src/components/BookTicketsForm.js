@@ -80,6 +80,7 @@ const StyledBookEventForm = styled.form`
 
   .main-form {
     max-width: 46rem;
+    width: 100%;
 
     @media (max-width: 768px) {
       margin-bottom: ${({ theme }) => theme.spacing['6']};

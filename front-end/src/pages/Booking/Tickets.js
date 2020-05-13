@@ -3,7 +3,7 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import CustomLink from '../../components/common/CustomLink';
 import BookTicketsForm from '../../components/BookTicketsForm';
 
-const SelectTickets = ({ navigate, onEnter }) => {
+const Tickets = ({ navigate, onEnter }) => {
   // Update stage nav to tickets
   useEffect(() => {
     onEnter(1);
@@ -19,4 +19,4 @@ const SelectTickets = ({ navigate, onEnter }) => {
   );
 };
 
-export default SelectTickets;
+export default Tickets;

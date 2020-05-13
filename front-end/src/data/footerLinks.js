@@ -1,6 +1,6 @@
-const FOOTER_LINK = [
+const FOOTER_LINKS = [
   {
-    title: 'Company',
+    title: 'Organization',
     links: [
       {
         href: '/',
@@ -85,4 +85,4 @@ const FOOTER_LINK = [
   },
 ];
 
-export default FOOTER_LINK;
+export default FOOTER_LINKS;
