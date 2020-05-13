@@ -1,11 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+
   html {
     font-size: 62.5%;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100%;
 
     @media (max-width: 768px) {
       font-size: 56.25%;
@@ -27,7 +29,21 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
+
+  #root {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+      flex: 1;
+    }
+  }
+  
 
   h1,
   h2,

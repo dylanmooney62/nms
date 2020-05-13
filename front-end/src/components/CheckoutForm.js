@@ -96,12 +96,9 @@ const CheckoutForm = ({ clientSecret, order, user, navigate }) => {
       <StyledCheckoutForm onSubmit={handleSubmit}>
         <div className="details">
           <Title className="details-title" as="h1" variant="h3">
-            Payment Details
+            Secure Checkout
           </Title>
           <CardElement className="card-element" onChange={handleCardChange} />
-          <Text>NO AUTH TEST CARD: 4242 4242 4242 4242</Text>
-          <Text>AUTHENTICATION TEST CARD: 4000 0025 0000 3155</Text>
-          <Text>INSUFFICIENT FUNDS TEST CARD: 4000 0000 0000 9995</Text>
         </div>
         <OrderSummary buttonText="Confirm Payment">
           <Button type="submit" disabled={!stripe || disabled}>

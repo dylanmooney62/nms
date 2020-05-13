@@ -12,6 +12,7 @@ import BookingContextProvider from './contexts/BookingContext';
 import AuthContextProvider from './contexts/AuthContext';
 import Booking from './pages/Booking/index';
 import SearchHistoryContextProvider from './contexts/SearchHistoryContext';
+import CookieBanner from './components/CookieBanner';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                   <Booking path="/book/:id/*" />
                   <NotFound default />
                 </Router>
+                <CookieBanner />
               </BookingContextProvider>
             </AuthContextProvider>
           </SearchHistoryContextProvider>

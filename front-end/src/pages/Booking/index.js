@@ -76,9 +76,15 @@ export default Booking;
 const StyledBooking = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   .booking-main {
     padding-top: ${({ theme }) => theme.spacing['8']};
-    padding-bottom: ${({ theme }) => theme.spacing['8']};
+    padding-bottom: ${({ theme }) => theme.spacing['5']};
+    height: 100%;
+
+    & > div {
+      height: 100%;
+    }
   }
 `;

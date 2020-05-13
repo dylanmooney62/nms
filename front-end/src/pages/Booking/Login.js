@@ -14,18 +14,18 @@ const Login = ({ onEnter, navigate }) => {
     <StyledLogin hideForm={hideForm}>
       <div className="buttons">
         <button
+          className={`toggle-button ${hideForm === 'signup' && 'active'}`}
           onClick={() => {
             setHideForm('signup');
           }}
-          className={`toggle-button ${hideForm === 'signup' && 'active'}`}
         >
           Login
         </button>
         <button
+          className={`toggle-button ${hideForm === 'login' && 'active'}`}
           onClick={() => {
             setHideForm('login');
           }}
-          className={`toggle-button ${hideForm === 'login' && 'active'}`}
         >
           Create Account
         </button>
@@ -55,6 +55,8 @@ const StyledLogin = styled.section`
     font-weight: 600;
     cursor: pointer;
     font-family: ${({ theme }) => theme.typography.headings};
+    background-color: none;
+    border: none;
 
     transition: all 0.3s 'ease-in-out';
 
