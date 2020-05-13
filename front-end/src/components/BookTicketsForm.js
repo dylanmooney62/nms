@@ -78,6 +78,12 @@ const StyledBookEventForm = styled.form`
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .main-form {
     max-width: 46rem;
     width: 100%;
@@ -86,7 +92,7 @@ const StyledBookEventForm = styled.form`
       margin-bottom: ${({ theme }) => theme.spacing['6']};
 
       max-width: unset;
-      width: 80%;
+      width: 100%;
     }
 
     @media (max-width: 425px) {
@@ -94,12 +100,6 @@ const StyledBookEventForm = styled.form`
 
       max-width: unset;
       width: 100%;
-    }
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
     }
   }
 

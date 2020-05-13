@@ -93,6 +93,10 @@ const StyledLoginForm = styled.form`
   padding: ${({ theme }) => theme.spacing['5']};
   border-radius: 0.1rem;
 
+  @media (max-width: 768px) {
+    max-width: unset;
+  }
+
   ${Title} {
     margin-bottom: ${({ theme }) => theme.spacing['5']};
   }

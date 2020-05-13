@@ -135,6 +135,10 @@ const StyledSignupForm = styled.div`
   width: 100%;
   max-width: 40rem;
 
+  @media (max-width: 768px) {
+    max-width: unset;
+  }
+
   form {
     padding: ${({ theme }) => theme.spacing['5']};
     border-radius: 0.1rem;

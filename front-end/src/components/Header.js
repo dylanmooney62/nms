@@ -37,6 +37,10 @@ const StyledHeader = styled.header`
 
   max-height: 100rem;
 
+  @media (max-width: 768px) {
+    max-height: 80vh;
+  }
+
   background-position: center;
 
   height: ${({ large, theme }) => (large ? '100vh' : theme.spacing['16'])};

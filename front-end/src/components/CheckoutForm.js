@@ -128,7 +128,6 @@ const StyledCheckoutForm = styled.form`
     @media (max-width: 768px) {
       margin-bottom: ${({ theme }) => theme.spacing['6']};
       max-width: unset;
-      width: 80%;
       margin-left: auto;
       margin-right: auto;
     }
