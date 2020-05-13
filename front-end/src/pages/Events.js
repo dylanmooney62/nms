@@ -50,7 +50,7 @@ const Events = ({ location }) => {
     } else {
       handleSearch(history.location.search.replace('?', ''));
     }
-  }, [location.state, handleSearch]);
+  }, [location, handleSearch]);
 
   return (
     <>
