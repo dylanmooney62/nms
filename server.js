@@ -69,6 +69,11 @@ app.use(mongoSanitize());
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'front-end', 'build')));
+app.use(express.static(path.join(__dirname, 'api', 'public')));
+
+app.get('/api/v1', (req, res) => {
+  res.sendFile(path.join(__dirname, 'api', 'public', 'index.html'));
+});
 
 app.use('/api/v1/events', events);
 app.use('/api/v1/images', images);
