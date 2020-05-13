@@ -13,8 +13,7 @@ const useAuth = () => {
         setIsLoading(false);
       })
       .catch((error) => {
-        console.log(error.response);
-        setUser('error');
+        setUser(null);
         setIsLoading(false);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps

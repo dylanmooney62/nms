@@ -1,28 +1,21 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { BookingContext } from '../../contexts/BookingContext';
-import { EventContext } from '../../contexts/EventContext';
-import api from '../../api/index';
-import Title from '../../components/common/Title';
-import Text from '../../components/common/Text';
-import DatePicker from '../../components/common/DatePicker';
-import TicketSelectorList from '../../components/common/TicketSelectorList';
-import OrderSummary from '../../components/OrderSummary';
-import Button from '../../components/common/Button';
-import CustomLink from '../../components/common/CustomLink';
+import { BookingContext } from '../contexts/BookingContext';
+import { EventContext } from '../contexts/EventContext';
+import api from '../api/index';
+import OrderSummary from './OrderSummary';
+import TicketSelectorList from './common/TicketSelectorList';
+import Title from './common/Title';
+import Text from './common/Text';
+import Button from './common/Button';
+import CustomDatePicker from './common/DatePicker';
 
-const SelectTickets = ({ id, navigate, onEnter }) => {
-  const { booking, updateBooking } = useContext(BookingContext);
-
+const BookEventForm = ({ navigate }) => {
   const event = useContext(EventContext);
 
-  const { name, shortDescription, closingDate } = event;
+  const { id, name, shortDescription, closingDate } = event;
 
-  // Update stage nav to tickets
-  useEffect(() => {
-    onEnter(1);
-  }, [onEnter]);
+  const { booking, updateBooking } = useContext(BookingContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,13 +46,13 @@ const SelectTickets = ({ id, navigate, onEnter }) => {
     Object.values(booking.tickets).reduce((x, y) => x + y) > 0;
 
   return (
-    <StyledSelectTickets onSubmit={handleSubmit}>
-      <div className="select-tickets">
+    <StyledBookEventForm onSubmit={handleSubmit}>
+      <div className="main-form">
         <Title variant="h3" as="h1" color="secondary">
           {name}
         </Title>
         <Text>{shortDescription}</Text>
-        <DatePicker
+        <CustomDatePicker
           className="date-picker"
           label="Visiting Date"
           onChange={handleChange}
@@ -75,31 +68,15 @@ const SelectTickets = ({ id, navigate, onEnter }) => {
           Continue
         </Button>
       </OrderSummary>
-      <div style={{ width: '100%' }}>
-        <CustomLink
-          to="../"
-          icon={faChevronLeft}
-          style={{ marginTop: '6.4rem' }}
-        >
-          Back
-        </CustomLink>
-      </div>
-    </StyledSelectTickets>
+    </StyledBookEventForm>
   );
 };
 
-const StyledSelectTickets = styled.form`
+const StyledBookEventForm = styled.form`
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .select-tickets {
+  .main-form {
     max-width: 46rem;
 
     @media (max-width: 768px) {
@@ -114,6 +91,12 @@ const StyledSelectTickets = styled.form`
 
       max-width: unset;
       width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -134,4 +117,4 @@ const StyledSelectTickets = styled.form`
   }
 `;
 
-export default SelectTickets;
+export default BookEventForm;

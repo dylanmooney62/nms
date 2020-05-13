@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import useEvents from '../../hooks/useEvents';
 import { EventContext } from '../../contexts/EventContext';
 import { BookingContext } from '../../contexts/BookingContext';
-import SelectTickets from './SelectTickets';
 import api from '../../api';
+import Tickets from './Tickets';
 import Login from './Login';
 import Checkout from './Checkout';
 import Summary from './Summary';
@@ -22,7 +22,8 @@ const Booking = ({ id }) => {
   // Reset booking and log out user if they leave the booking page
   useEffect(() => {
     return () => {
-      clearBooking(); // Clear token cookie
+      clearBooking();
+      // Clear token cookie
       api.get('auth/logout');
     };
   }, [clearBooking]);
@@ -44,13 +45,13 @@ const Booking = ({ id }) => {
     <StyledBooking>
       <CustomToast />
       <BookingHeader stage={stage} />
-      <Container className="main" variant="small" as="main">
+      <Container className="booking-main" variant="small" as="main">
         <EventContext.Provider value={event}>
           <Router>
             <Login path="/" onEnter={handleEnter} />
             <ProtectedRoute
               path="tickets"
-              component={SelectTickets}
+              component={Tickets}
               onEnter={handleEnter}
             />
             <ProtectedRoute
@@ -76,7 +77,7 @@ const StyledBooking = styled.div`
   display: flex;
   flex-direction: column;
 
-  .main {
+  .booking-main {
     padding-top: ${({ theme }) => theme.spacing['8']};
     padding-bottom: ${({ theme }) => theme.spacing['8']};
   }

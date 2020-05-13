@@ -10,7 +10,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
   }
 
   if (!user) {
-    return <Redirect from="" to="../book" noThrow />;
+    return <Redirect from="" to="../" noThrow />;
   }
 
   return <Component {...rest} user={user} />;
