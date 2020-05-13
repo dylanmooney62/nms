@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
 import { BookingContext } from '../contexts/BookingContext';
 import { EventContext } from '../contexts/EventContext';
 import api from '../api/index';
@@ -32,8 +33,9 @@ const BookEventForm = ({ navigate }) => {
         },
       });
     } catch ({ response }) {
-      // TODO: ADD TOASTY ERROR
-      console.log(response);
+      toast.error(response.data.error, {
+        toastId: 'booking-error',
+      });
     }
   };
 

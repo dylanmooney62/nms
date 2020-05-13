@@ -50,7 +50,7 @@ const createOrder = (TicketedEvent) =>
       return next(
         new StatusHandler(
           400,
-          `Not enough tickets available for date '${date}'`,
+          `Not enough tickets available for selected date`,
         ),
       );
     }
