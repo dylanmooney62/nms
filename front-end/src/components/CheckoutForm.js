@@ -95,7 +95,12 @@ const CheckoutForm = ({ clientSecret, order, user, navigate }) => {
       {loading && <CheckoutOverlay />}
       <StyledCheckoutForm onSubmit={handleSubmit}>
         <div className="details">
-          <Title className="details-title" as="h1" variant="h3">
+          <Title
+            className="details-title"
+            as="h1"
+            variant="h3"
+            color="secondary"
+          >
             Secure Checkout
           </Title>
           <CardElement className="card-element" onChange={handleCardChange} />
