@@ -42,22 +42,6 @@ const Checkout = ({ onEnter, location, user, navigate }) => {
         </CustomLink>
       </div>
       <div className="checkout-labels">
-        <table
-          width="135"
-          border="0"
-          cellPadding="2"
-          cellSpacing="0"
-          title="Click to Verify - This site chose DigiCert SSL for secure e-commerce and confidential communications."
-        >
-          <tr>
-            <td width="135" align="center" vAlign="top">
-              <script
-                type="text/javascript"
-                src="https://seal.websecurity.norton.com/getseal?host_name=dm-national-museum-of-scotland.herokuapp.com/&amp;size=L&amp;use_flash=NO&amp;use_transparent=Yes&amp;lang=en"
-              ></script>
-            </td>
-          </tr>
-        </table>
         <StripeLogo className="stripe" />
       </div>
     </StyledCheckout>
