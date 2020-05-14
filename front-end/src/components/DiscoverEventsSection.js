@@ -1,11 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import useEvents from '../hooks/useEvents';
 import { primaryGradient } from '../styles/mixins';
 import SectionTitle from './common/SectionTitle';
 import AsyncCardList from './common/AsyncCardList';
 import Container from './common/Container';
 
-const DiscoverEventsSection = ({ events, loading, variant }) => {
+const DiscoverEventsSection = ({ variant, filter }) => {
+  const [loading, events] = useEvents(`?slug[ne]=${filter}&limit=2`);
+
   return (
     <StyledDiscoverEventsSection variant={variant}>
       <Container>

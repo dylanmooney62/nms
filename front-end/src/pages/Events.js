@@ -32,13 +32,18 @@ const Events = ({ location }) => {
         'closingDate[gte]',
       )}&sort=openingDate`;
 
-      const {
-        data: { data: events },
-      } = await api.get(`events?${query}`);
+      try {
+        const {
+          data: { data: events },
+        } = await api.get(`events?${query}`);
 
-      setSearchHistory(history.location.search);
-      setEvents(events);
-      setLoading(false);
+        setSearchHistory(history.location.search);
+        setEvents(events);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        setEvents([]);
+      }
     },
     [setSearchHistory],
   );

@@ -12,12 +12,13 @@ const Map = () => {
   return (
     <StyledMap>
       <ReactMapGL
+        className="map"
         mapStyle="mapbox://styles/dylanmooney97/ck9bolf7x087k1ir6d2m1gawa?optimize=true"
         mapboxApiAccessToken="pk.eyJ1IjoiZHlsYW5tb29uZXk5NyIsImEiOiJjanZlYjE1eTQxczRyNGRtbWkyeXp2emNuIn0.ByVSX3Yy8z-BFjKAJJYZeg"
         {...viewport}
         onViewportChange={setViewport}
-        height={'51.2rem'}
         width={'100%'}
+        height={'100%'}
       >
         <div className="controls">
           <NavigationControl />
@@ -29,6 +30,12 @@ const Map = () => {
 
 const StyledMap = styled.div`
   width: 100%;
+  position: relative;
+  height: 52.2rem;
+
+  @media (max-width: 768px) {
+    height: 42.2rem;
+  }
 
   .controls {
     position: absolute;

@@ -56,6 +56,7 @@ const StyledLogin = styled.section`
     cursor: pointer;
     font-family: ${({ theme }) => theme.typography.headings};
     background-color: none;
+    background: transparent;
     border: none;
 
     transition: all 0.3s 'ease-in-out';

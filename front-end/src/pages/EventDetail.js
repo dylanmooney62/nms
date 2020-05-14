@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from '@reach/router';
+import { Link, Redirect } from '@reach/router';
 import styled from 'styled-components';
 import withSideDrawer from '../hoc/withSideDrawer';
 import useEvents from '../hooks/useEvents';
@@ -12,22 +12,21 @@ import Testimonials from '../components/Testimonials';
 import DiscoverEventsSection from '../components/DiscoverEventsSection';
 import BackBanner from '../components/BackBanner';
 import { SearchHistoryContext } from '../contexts/SearchHistoryContext';
+import Loading from './Loading';
 
 const EventDetail = ({ slug }) => {
   const [isLoading, events] = useEvents(`?slug=${slug}&limit=1`);
-  const [eventsLoading, moreEvents] = useEvents(`?slug[ne]=${slug}&limit=2`);
+
   const { searchHistory } = useContext(SearchHistoryContext);
 
   const event = events[0];
 
-  // reach router to navigate away
-
   if (isLoading) {
-    return null;
+    return <Loading />;
   }
 
   if (!isLoading && !event) {
-    return <div>404 - Not found</div>;
+    return <Redirect to="/not-found" noThrow />;
   }
 
   const {
@@ -78,9 +77,8 @@ const EventDetail = ({ slug }) => {
       />
       {testimonials.length >= 1 && <Testimonials testimonials={testimonials} />}
       <DiscoverEventsSection
-        events={moreEvents}
-        loading={eventsLoading}
         variant={testimonials.length > 1 ? 'primary' : 'secondary'}
+        filter={slug}
       />
       <LargeFooter />
     </>

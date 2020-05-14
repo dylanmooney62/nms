@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Router } from '@reach/router';
+import { Router, Redirect } from '@reach/router';
 import styled from 'styled-components';
 import useEvents from '../../hooks/useEvents';
 import { EventContext } from '../../contexts/EventContext';
@@ -29,12 +29,12 @@ const Booking = ({ id }) => {
   }, [clearBooking]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return null;
   }
 
   // if tickets cant be purchased for this event return 404
   if (!event || !event.ticketed) {
-    return <div>404 | not found</div>;
+    return <Redirect to="/not-found" noThrow />;
   }
 
   const handleEnter = (stage) => {

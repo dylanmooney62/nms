@@ -4,8 +4,11 @@ import SectionTitle from './common/SectionTitle';
 import Button from './common/Button';
 import EventsLink from './common/EventsLink';
 import AsyncCardList from './common/AsyncCardList';
+import useEvents from '../hooks/useEvents';
 
-const WhatsOnSection = ({ events, loading }) => {
+const WhatsOnSection = () => {
+  const [loading, events] = useEvents('?limit=4');
+
   return (
     <StyledWhatsOnSection>
       <SectionTitle

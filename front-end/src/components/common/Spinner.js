@@ -9,9 +9,9 @@ const override = css`
   border-color: red;
 `;
 
-const Spinner = ({ className }) => {
+const Spinner = ({ className, style }) => {
   return (
-    <div className={className}>
+    <div className={className} style={style}>
       <BarLoader css={override} color={theme.colors['purple-orchid']} />
     </div>
   );

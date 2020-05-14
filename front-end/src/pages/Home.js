@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import { Link, Redirect } from '@reach/router';
 import useEvents from '../hooks/useEvents';
 import withSideDrawer from '../hoc/withSideDrawer';
 import Header from '../components/Header';
@@ -11,18 +11,19 @@ import WhatsOnSection from '../components/WhatsOnSection';
 import MembershipCta from '../components/MembershipCta';
 import Map from '../components/Map';
 import Footer from '../components/Footer';
+import Loading from './Loading';
 
 const Home = () => {
-  const [isLoading, events] = useEvents('?limit=4');
+  const [isLoading, events] = useEvents('?limit=1');
 
   const event = events[0];
 
   if (isLoading) {
-    return null;
+    return <Loading />;
   }
 
   if (!isLoading && !event) {
-    return <div>404 - Not found</div>;
+    return <Redirect to="/not-found" noThrow />;
   }
 
   const {
@@ -53,7 +54,7 @@ const Home = () => {
       </Header>
       <HistorySection />
       <CollectionSection />
-      <WhatsOnSection events={events} loading={isLoading} />
+      <WhatsOnSection />
       <MembershipCta />
       <Map />
       <Footer />

@@ -3,20 +3,21 @@ import api from '../api';
 
 const useEvents = (query) => {
   const [events, setEvents] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
-    api
-      .get(`events${query}`)
-      .then(({ data }) => {
-        setEvents(data.data);
+    (async () => {
+      try {
+        const {
+          data: { data: events },
+        } = await api.get(`events${query}`);
+
+        setEvents(events);
         setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
+      } catch (error) {
         setIsLoading(false);
-      });
+      }
+    })();
   }, [query]);
 
   return [isLoading, events];

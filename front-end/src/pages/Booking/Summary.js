@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { Redirect } from '@reach/router';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Title from '../../components/common/Title';
@@ -13,7 +14,7 @@ const Summary = ({ onEnter, location }) => {
   }, [onEnter]);
 
   if (!location.state) {
-    return <div>404 | Something went wrong</div>;
+    return <Redirect from="" to="../tickets" noThrow />;
   }
 
   const {
