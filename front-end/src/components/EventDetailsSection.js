@@ -59,7 +59,7 @@ const StyledEventDetailsSection = styled.section`
     width: 100%;
     max-height: 40rem;
     object-fit: cover;
-    object-position: center;
+    object-position: bottom;
     margin-bottom: ${({ theme }) => theme.spacing['8']};
   }
 
