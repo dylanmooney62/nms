@@ -18,10 +18,9 @@ const CollectionSection = () => {
             subtitle="Explore"
           />
           <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum
-            rhoncus ornare erat nibh. Augue in erat enim eu mauris fermentum
-            quis. Eu eu habitant viverra ornare vitae mauris, interdum ut magna.
-            Ullamcorper consequat in blandit eros.
+            From the ancient egyptian artifacts to Elton John's extravagant
+            suit. The National Museum of Scotland has something for everyone.
+            Come take a look at our online collections.
           </Text>
           <Button to="/" as={Link}>
             View Collections

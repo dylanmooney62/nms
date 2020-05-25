@@ -13,31 +13,30 @@ const HistorySection = () => {
         <div className="grid">
           <div className="text-box">
             <Text>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
-              iusto similique hic consectetur consequuntur vitae quod quisquam,
-              eaque dolorem voluptatem voluptas, doloribus enim? Lorem ipsum,
-              dolor sit amet consectetur adipisicing elit
+              The National Museum of Scotland was formed in 2006 and merged with
+              the new Museum of Scotland. The National Museum of Scotland has
+              many collections relating to science, world cultures and history.
             </Text>
             <Text>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
-              iusto similique hic consectetur consequuntur vitae quod quisquam,
-              eaque dolorem voluptatem voluptas, doloribus enim? Lorem ipsum,
-              dolor sit amet consectetur adipisicing elit
+              The National Museum of Scotland can be said to have begun in 1780
+              with the foundation of the Society of Antiquaries of Scotland.
+              This collection continues but was transferred to the government in
+              1858 as the National Museum of Antiquities of Scotland.
             </Text>
           </div>
           <img src={Edinburgh} alt="City of Edinburgh" />
           <div className="text-box">
             <Text>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
-              iusto similique hic consectetur consequuntur vitae quod quisquam,
-              eaque dolorem voluptatem voluptas, doloribus enim? Lorem ipsum,
-              dolor sit amet consectetur adipisicing elit
+              The Museum has had numerous extensions over the years,
+              particularly in the 1930s when an extension was added to the rear
+              of the building, extending the museum greatly.
             </Text>
             <Text>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
-              iusto similique hic consectetur consequuntur vitae quod quisquam,
-              eaque dolorem voluptatem voluptas, doloribus enim? Lorem ipsum,
-              dolor sit amet consectetur adipisicing elit
+              16 new galleries were opened in 2011 including 8,000 objects. One
+              of the most interesting exhibits is the stuffed body of dolly the
+              sheep which is the fist successful cloning of a mammal from an
+              adult cell. Other notable highlights include Ancient Egyptian
+              artifacts and one of Elton John's suits.
             </Text>
           </div>
         </div>

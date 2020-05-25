@@ -23,10 +23,9 @@ const MembershipCta = () => {
             variant="secondary"
           />
           <Text color="white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum
-            rhoncus ornare erat nibh. Augue in erat enim eu mauris fermentum
-            quis. Eu eu habitant viverra ornare vitae mauris, interdum ut magna.
-            Ullamcorper consequat in blandit eros.
+            Loving your time at the museum? Support us today to help us
+            introduce new exhibitions and events to the museum. Members also
+            receive a 10% discount on all products and tickets.
           </Text>
           <Button variant="secondary" as={Link} to="/">
             Join Now

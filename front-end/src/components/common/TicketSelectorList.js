@@ -17,15 +17,17 @@ const TicketSelectorList = () => {
 
   return (
     <StyledTicketSelectorList>
-      {Object.entries(ticketPrice).map(([type, price]) => (
-        <TicketSelector
-          key={type}
-          type={type}
-          quantity={tickets[type]}
-          onChange={handleChange}
-          price={price}
-        />
-      ))}
+      {Object.entries(ticketPrice).map(([type, price]) =>
+        price > 0 ? (
+          <TicketSelector
+            key={type}
+            type={type}
+            quantity={tickets[type]}
+            onChange={handleChange}
+            price={price}
+          />
+        ) : null,
+      )}
     </StyledTicketSelectorList>
   );
 };
