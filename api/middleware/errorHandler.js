@@ -18,7 +18,7 @@ const errorHandler = (err, req, res, next) => {
     const message = Object.values(error.errors)
       .map((value) => value.message)
       .join(', ');
-    error = new StatusHandler(404, message);
+    error = new StatusHandler(400, message);
   }
 
   // Duplicate Key found

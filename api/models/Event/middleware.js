@@ -2,7 +2,7 @@ const slugify = require('slugify');
 const { format, eachDayOfInterval } = require('date-fns');
 
 function createSlug(next) {
-  this.slug = slugify(this.name, { lower: true });
+  this.slug = slugify(this.name, { lower: true, strict: true });
   next();
 }
 
