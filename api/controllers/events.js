@@ -121,7 +121,9 @@ const eventImageUpload = asyncHandler(async (req, res, next) => {
     const filename = req.files[key][0].filename;
 
     // Create url for image
-    const imageUrl = `${requestUrl.replace('events', 'images')}/${filename}`;
+    const imageUrl = `${requestUrl
+      .replace('events', 'images')
+      .replace('http', 'https')}/${filename}`;
 
     return {
       ...obj,
