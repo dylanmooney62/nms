@@ -15,7 +15,7 @@ const HistorySection = () => {
             <Text>
               The National Museum of Scotland was formed in 2006 and merged with
               the new Museum of Scotland. The National Museum of Scotland has
-              many collections relating to science, world cultures and history.
+              many collections relating to science, world cultures, and history.
             </Text>
             <Text>
               The National Museum of Scotland can be said to have begun in 1780
@@ -35,7 +35,7 @@ const HistorySection = () => {
               16 new galleries were opened in 2011 including 8,000 objects. One
               of the most interesting exhibits is the stuffed body of dolly the
               sheep which is the fist successful cloning of a mammal from an
-              adult cell. Other notable highlights include Ancient Egyptian
+              adult cell. Other notable highlights include ancient Egyptian
               artifacts and one of Elton John's suits.
             </Text>
           </div>

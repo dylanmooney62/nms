@@ -104,6 +104,7 @@ const CheckoutForm = ({ clientSecret, order, user, navigate }) => {
             Secure Checkout
           </Title>
           <CardElement className="card-element" onChange={handleCardChange} />
+          <Text>Test card: 4000 0027 6000 3184</Text>
         </div>
         <OrderSummary buttonText="Confirm Payment">
           <Button type="submit" disabled={!stripe || disabled}>

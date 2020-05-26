@@ -57,10 +57,12 @@ const StyledEventDetailsSection = styled.section`
 
   img {
     width: 100%;
+    margin: 0 auto;
     max-height: 40rem;
     object-fit: cover;
-    object-position: bottom;
+    object-position: center;
     margin-bottom: ${({ theme }) => theme.spacing['8']};
+    border-radius: 0.8rem;
   }
 
   .grid {
