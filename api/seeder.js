@@ -1,5 +1,6 @@
+const path = require('path');
 require('colors');
-require('dotenv').config({ path: './config/config.env' });
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
 const fs = require('fs');
 const mongoose = require('mongoose');
 const { Event } = require('./models/Event');
@@ -14,9 +15,19 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
 });
 
-const events = JSON.parse(fs.readFileSync('./_data/events.json', 'utf-8'));
-const orders = JSON.parse(fs.readFileSync('./_data/orders.json', 'utf-8'));
-const tickets = JSON.parse(fs.readFileSync('./_data/tickets.json', 'utf-8'));
+const events = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '_data', 'events.json'), 'utf-8'),
+);
+
+const orders = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '_data', 'orders.json'), 'utf-8'),
+  'utf-8',
+);
+
+const tickets = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '_data', 'tickets.json'), 'utf-8'),
+  'utf-8',
+);
 
 const importData = async () => {
   try {

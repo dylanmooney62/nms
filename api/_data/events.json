@@ -155,5 +155,110 @@
     "openingTime": "10:00",
     "closingTime": "17:00",
     "testimonials": []
+  },
+  {
+    "_id": "5ecbb583b918620017dbbc46",
+    "ticketPrice": {
+      "adult": "12.00",
+      "child": "6.00",
+      "student": "8.00",
+      "retired": "8.00"
+    },
+    "type": "Event",
+    "hero": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/c9df1f4c-01a1-4fc7-a0b8-97801b92d116",
+    "thumbnail": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/2fe68e3a-c779-4f1f-a1ba-cd38f0158225",
+    "banner": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/974bae72-d231-4666-8bf8-0faa387c4708",
+    "ageLimit": 0,
+    "kind": "TicketedEvent",
+    "ticketsPerDay": 200,
+    "ticketed": true,
+    "admission": true,
+    "name": "Ancient Egypt",
+    "tagLine": "N/A",
+    "openingDate": "2020-04-20",
+    "closingDate": "2020-11-03",
+    "openingTime": "10:00",
+    "closingTime": "17:00",
+    "shortDescription": "Travel back 5000 years and discover secrets about the extraorindary egyptians",
+    "description": "Travel back 5000 years and discover secrets about the extraorindary egyptians. Learn and experience what life was like for the average egyptian and discoves ancient artifacts which have made their way to the museum",
+    "testimonials": [
+      {
+        "rating": 4,
+        "quote": "Spectacular fun",
+        "author": "The Fictional Times"
+      },
+      {
+        "rating": 4,
+        "quote": "Eye opening",
+        "author": "The Daily Fiction"
+      },
+      {
+        "rating": 3,
+        "quote": "I could not look away",
+        "author": "Financial Fiction"
+      }
+    ]
+  },
+  {
+    "_id": "5ecbb4d5b918620017dbbc45",
+    "ticketPrice": {
+      "adult": "12.00",
+      "child": "6.00",
+      "student": "8.00",
+      "retired": "8.00"
+    },
+    "type": "Event",
+    "hero": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/e0d16552-4114-4d93-9c7d-38cd5d906676",
+    "thumbnail": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/2405af15-80e9-4363-b250-ae89c77f1070",
+    "banner": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/4b17f49a-c811-4993-8013-ed27a081e29b",
+    "ageLimit": 0,
+    "kind": "TicketedEvent",
+    "ticketsPerDay": 200,
+    "ticketed": true,
+    "admission": true,
+    "name": "Space: Rediscovered",
+    "tagLine": "N/A",
+    "openingDate": "2020-01-30",
+    "closingDate": "2020-12-01",
+    "openingTime": "10:00",
+    "closingTime": "17:00",
+    "shortDescription": "Rediscover space in this fascinating event and learn what the future holds for mankind",
+    "description": "Rediscover space in this fascinating event and learn what the future holds for mankind. View the solar the system and speak to experts on space and learn how rockets work.",
+    "testimonials": [
+      {
+        "rating": 5,
+        "quote": "Beautiful Storytelling",
+        "author": "The Fictional Times"
+      },
+      {
+        "rating": 5,
+        "quote": "It was a blast",
+        "author": "The Daily Fiction"
+      },
+      {
+        "rating": 5,
+        "quote": "I've been three times",
+        "author": "Financial Fiction"
+      }
+    ]
+  },
+  {
+    "_id": "5ecbb375b918620017dbbc44",
+    "type": "Tour",
+    "hero": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/f894b122-1839-4f7e-be00-2fe11f82d043",
+    "thumbnail": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/27e98a80-2204-4bf0-bf20-8392b7869b2c",
+    "banner": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/285233d1-0aa3-46ca-a42c-2244b6b96bf7",
+    "ageLimit": 0,
+    "ticketed": false,
+    "admission": false,
+    "name": "Museum Tour",
+    "tagLine": "N/A",
+    "openingDate": "2020-01-10",
+    "closingDate": "2021-12-20",
+    "openingTime": "10:00",
+    "closingTime": "17:00",
+    "shortDescription": "Visit and have a free tour on us. Learn about our rich history",
+    "description": "Tours are always free and we have one running each hour until closing time. So what are you waiting for? Come visit us!",
+    "testimonials": []
   }
 ]
