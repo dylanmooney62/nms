@@ -1,0 +1,193 @@
+[{
+  "_id": {
+    "$oid": "5e95ebeede74af7e86ec9f3d"
+  },
+  "status": "pending",
+  "user": {
+    "$oid": "5e8f8af0318aa1ca1df5bd87"
+  },
+  "event": {
+    "$oid": "5e8f753de17b1abcaf5d4bc2"
+  },
+  "summary": {
+    "tickets": [
+      {
+        "type": "adult",
+        "quantity": 2,
+        "ticketPrice": 1200,
+        "totalPrice": 2400
+      }
+    ],
+    "date": "2020-04-18",
+    "totalPrice": 2400,
+    "totalQuantity": 2
+  },
+  "createdAt": {
+    "$date": "2020-04-14T16:59:26.672Z"
+  },
+  "updatedAt": {
+    "$date": "2020-04-14T16:59:26.672Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5e95ebc0de74af7e86ec9f3c"
+  },
+  "status": "pending",
+  "user": {
+    "$oid": "5e8f8af0318aa1ca1df5bd87"
+  },
+  "event": {
+    "$oid": "5e8f753de17b1abcaf5d4bca"
+  },
+  "summary": {
+    "tickets": [
+      {
+        "type": "adult",
+        "quantity": 1,
+        "ticketPrice": 1200,
+        "totalPrice": 1200
+      }
+    ],
+    "date": "2020-04-18",
+    "totalPrice": 1200,
+    "totalQuantity": 1
+  },
+  "createdAt": {
+    "$date": "2020-04-14T16:58:40.525Z"
+  },
+  "updatedAt": {
+    "$date": "2020-04-14T16:58:40.525Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ecf8831615f760017b4afd7"
+  },
+  "status": "completed",
+  "user": {
+    "$oid": "5e8f8af0318aa1ca1df5bd87"
+  },
+  "event": {
+    "$oid": "5ecbb4d5b918620017dbbc45"
+  },
+  "summary": {
+    "date": "2020-06-03",
+    "totalPrice": 1200,
+    "totalQuantity": 1,
+    "tickets": [
+      {
+        "type": "adult",
+        "quantity": 1,
+        "ticketPrice": 1200,
+        "totalPrice": 1200
+      }
+    ]
+  },
+  "createdAt": {
+    "$date": "2020-05-28T09:45:21.464Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-28T09:46:30.046Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ecf992f615f760017b4afd9"
+  },
+  "status": "completed",
+  "user": {
+    "$oid": "5e8f8af0318aa1ca1df5bd87"
+  },
+  "event": {
+    "$oid": "5e8f753de17b1abcaf5d4bc6"
+  },
+  "summary": {
+    "date": "2020-05-28",
+    "totalPrice": 3200,
+    "totalQuantity": 3,
+    "tickets": [
+      {
+        "type": "adult",
+        "quantity": 2,
+        "ticketPrice": 1200,
+        "totalPrice": 2400
+      },
+      {
+        "type": "student",
+        "quantity": 1,
+        "ticketPrice": 800,
+        "totalPrice": 800
+      }
+    ]
+  },
+  "createdAt": {
+    "$date": "2020-05-28T10:57:51.211Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-28T10:58:45.813Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ecf9ab4615f760017b4afdd"
+  },
+  "status": "pending",
+  "user": {
+    "$oid": "5e8f8af0318aa1ca1df5bd87"
+  },
+  "event": {
+    "$oid": "5e8f753de17b1abcaf5d4bc2"
+  },
+  "summary": {
+    "date": "2020-05-28",
+    "totalPrice": 1200,
+    "totalQuantity": 1,
+    "tickets": [
+      {
+        "type": "adult",
+        "quantity": 1,
+        "ticketPrice": 1200,
+        "totalPrice": 1200
+      }
+    ]
+  },
+  "createdAt": {
+    "$date": "2020-05-28T11:04:20.933Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-28T11:04:20.933Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ecfa151615f760017b4afde"
+  },
+  "status": "completed",
+  "user": {
+    "$oid": "5e8f8af0318aa1ca1df5bd87"
+  },
+  "event": {
+    "$oid": "5e8f753de17b1abcaf5d4bca"
+  },
+  "summary": {
+    "date": "2020-05-28",
+    "totalPrice": 600,
+    "totalQuantity": 1,
+    "tickets": [
+      {
+        "type": "child",
+        "quantity": 1,
+        "ticketPrice": 600,
+        "totalPrice": 600
+      }
+    ]
+  },
+  "createdAt": {
+    "$date": "2020-05-28T11:32:33.592Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-28T11:40:42.172Z"
+  },
+  "__v": 0
+}]

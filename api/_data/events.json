@@ -1,5 +1,51 @@
 [
   {
+    "_id": "5e8f753de17b1abcaf5d4bca",
+    "ticketPrice": {
+      "adult": 12,
+      "child": 6,
+      "student": 8,
+      "retired": 8
+    },
+    "type": "Exhibit",
+    "hero": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/31a43249-c20b-4213-96cb-784616c223fd",
+    "thumbnail": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/5a18d802-65fd-48c6-aabe-6f907aa98b06",
+    "banner": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/883d3b30-6703-454e-8a38-a1442400aee2",
+    "ageLimit": 0,
+    "kind": "TicketedEvent",
+    "ticketed": true,
+    "admission": true,
+    "name": "Scotland's Precious Seas",
+    "tagLine": "The hidden treasures",
+    "shortDescription": "Find out about the scientific research measuring the impact of our activities on the marine environment",
+    "description": "Find out about the scientific research measuring the impact of our activities on the marine environment. Discover Scotland's Seas in a never seen before way",
+    "openingDate": "2020-04-09",
+    "closingDate": "2020-11-09",
+    "openingTime": "10:00",
+    "closingTime": "17:00",
+    "testimonials": [
+      {
+        "_id": "5e8f753de17b1abcaf5d4bcb",
+        "rating": 5,
+        "quote": "A beauty to behold",
+        "author": "The Fictional Times"
+      },
+      {
+        "_id": "5e8f753de17b1abcaf5d4bcc",
+        "rating": 4,
+        "quote": "Scotland's seas are not to be missed",
+        "author": "The Daily Fiction"
+      },
+      {
+        "_id": "5e8f753de17b1abcaf5d4bcd",
+        "rating": 5,
+        "quote": "This is not to be missed",
+        "author": "Financial Fiction"
+      }
+    ],
+    "ticketsPerDay": 200
+  },
+  {
     "_id": "5e8f753de17b1abcaf5d4bc2",
     "ticketPrice": {
       "adult": 12,
@@ -22,7 +68,7 @@
     "openingTime": "09:00",
     "closingTime": "17:00",
     "shortDescription": "Meet the most feared and revered of all dinosaurs in this cutting-edge exhibition",
-    "description": "Tyrannosaur, any of a group of predatory dinosaurs that lived from the late Jurassic Period (about 150 million years ago) to the latest Cretaceous Period (about 65 million years ago), at which time they reached their greatest dominance. Most tyrannosaurs were large predators, with very large, high skulls approaching or well exceeding a full metre (more than three feet) in length. The best-known and largest member of the group is Tyrannosaurus rex, or T. rex. The “king of the tyrant lizards,” as its Latin name is usually translated, walked on powerfully developed hind limbs. If the animal had stood upright, it would have been more than 6.5 metres (21 feet) tall, but the usual posture was horizontal, with the body carried parallel to the ground and the tail held off the ground as a counterbalance. In this position a large adult, weighing 4,000 to 7,000 kg (about 9,000 to 15,000 pounds), could measure 14 metres long. \n The longest known tyrannosaur skull is 1.3 metres (more than 4 feet) long. The skull bones of large tyrannosaurs are often several centimeters thick and are strongly braced to each other, which suggests a resistance to the forces of biting, both inflicted upon and received from other tyrannosaurs. Engineering models, in fact, show that the bite force of T. rex would easily have been capable of ripping through a car roof, as portrayed in the 1993 motion picture Jurassic Park. The huge mouth contained some 60 teeth, which could protrude as far as 15 cm (6 inches). The crowns of the teeth were shed and regrown frequently (every 250 days or so, on the basis of microscopic lines visible within the teeth). Serrations of the teeth bear deep pocketlike recesses in which bacteria may have flourished to provide an infectious bite.",
+    "description": "Meet the most feared and revered of all dinosaurs in this cutting-edge exhibition.",
     "testimonials": [
       {
         "_id": "5e8f753de17b1abcaf5d4bc3",
@@ -91,52 +137,7 @@
     ],
     "ticketsPerDay": 200
   },
-  {
-    "_id": "5e8f753de17b1abcaf5d4bca",
-    "ticketPrice": {
-      "adult": 12,
-      "child": 6,
-      "student": 8,
-      "retired": 8
-    },
-    "type": "Exhibit",
-    "hero": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/31a43249-c20b-4213-96cb-784616c223fd",
-    "thumbnail": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/5a18d802-65fd-48c6-aabe-6f907aa98b06",
-    "banner": "https://dm-national-museum-of-scotland.herokuapp.com/api/v1/images/883d3b30-6703-454e-8a38-a1442400aee2",
-    "ageLimit": 0,
-    "kind": "TicketedEvent",
-    "ticketed": true,
-    "admission": true,
-    "name": "Scotland's Precious Seas",
-    "tagLine": "The hidden treasures",
-    "shortDescription": "Find out about the scientific research measuring the impact of our activities on the marine environment",
-    "description": "Scotland’s coast stretches for 18,672 km and Scotland’s seas cover 462,263 km2, more than six times its land area. From its shores the seabed plunges from shallow seas less than 20 metres deep to more than two kilometres deep, where seamounts dwarf Scotland’s highest mountains. Scotland’s coasts and seas brim with life. More than 46,500 species are known, and more are discovered all the time.",
-    "openingDate": "2020-04-09",
-    "closingDate": "2020-11-09",
-    "openingTime": "10:00",
-    "closingTime": "17:00",
-    "testimonials": [
-      {
-        "_id": "5e8f753de17b1abcaf5d4bcb",
-        "rating": 5,
-        "quote": "A beauty to behold",
-        "author": "The Fictional Times"
-      },
-      {
-        "_id": "5e8f753de17b1abcaf5d4bcc",
-        "rating": 4,
-        "quote": "Scotland's seas are not to be missed",
-        "author": "The Daily Fiction"
-      },
-      {
-        "_id": "5e8f753de17b1abcaf5d4bcd",
-        "rating": 5,
-        "quote": "This is not to be missed",
-        "author": "Financial Fiction"
-      }
-    ],
-    "ticketsPerDay": 200
-  },
+
   {
     "_id": "5e8f753de17b1abcaf5d4bce",
     "type": "Exhibit",
@@ -149,7 +150,7 @@
     "name": "Japanese Design",
     "tagLine": "Experience Japan",
     "shortDescription": "Japanese artists are challenging preconceptions and using traditional Japanese materials and techniques",
-    "description": "The kanji that make up the name of Japan mean \"sun origin\"; in the Western world, the country is often known by the sobriquet \"Land of the Rising Sun\". While archaeological evidence indicates that Japan was inhabited as early as the Upper Paleolithic period, the first written mention of the archipelago appears in Chinese texts from the first century AD. Between the fourth and ninth centuries, the kingdoms of Japan gradually unified under an Emperor and imperial court based in Heian-kyō (modern Kyoto). However, beginning in the twelfth century, de facto political power came to be held by a succession of military dictators (shōgun) and feudal lords (daimyō) and enforced by a class of warrior nobility known as samurai. After a century-long period of civil war, Japan was reunified in 1603 under the rule of the Tokugawa shogunate, which enacted a policy of isolationism. This period ended in 1853 when a United States fleet forced Japan to open to the West, leading to the fall of the shogunate and the restoration of imperial power in 1868. In the following Meiji era, Japan adopted a Western-style government and pursued a program of industrialization and modernization; this transformed the feudal society into a great power, with Japan establishing a colonial empire in East Asia after decisive victories in the First Sino-Japanese War and Russo-Japanese War. In 1937, the Empire of Japan invaded China, beginning the Second Sino-Japanese War; in 1940, it signed the Tripartite Pact and entered World War II the following year on the side of the Axis powers. After suffering major defeats in the Pacific and two atomic bombings, Japan surrendered to the Allies in 1945, coming under a brief occupation and adopting a new post-war constitution. Japan has since maintained a unitary parliamentary constitutional monarchy with the Emperor as a ceremonial head of state and an elected legislature known as the National Diet.",
+    "description": "Japanese artists are challenging preconceptions and using traditional Japanese materials and techniques. Come and find out why and how in this fascinating exhibit.",
     "openingDate": "2020-04-12",
     "closingDate": "2020-09-10",
     "openingTime": "10:00",
@@ -179,8 +180,8 @@
     "closingDate": "2020-11-03",
     "openingTime": "10:00",
     "closingTime": "17:00",
-    "shortDescription": "Travel back 5000 years and discover secrets about the extraorindary egyptians",
-    "description": "Travel back 5000 years and discover secrets about the extraorindary egyptians. Learn and experience what life was like for the average egyptian and discoves ancient artifacts which have made their way to the museum",
+    "shortDescription": "Travel back 5000 years and discover secrets about the extraordinary egyptians",
+    "description": "Travel back 5000 years and discover secrets about the extraordinary egyptians. Learn and experience what life was like for the average egyptian and discover ancient artifacts which have made their way to the museum",
     "testimonials": [
       {
         "rating": 4,

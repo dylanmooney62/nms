@@ -1,0 +1,18 @@
+[
+  {
+    "_id": {
+      "$oid": "5ecfdd35615f760017b4afe0"
+    },
+    "role": "admin",
+    "name": "Admin",
+    "email": "admin62@example.com",
+    "password": "$2a$10$Eyu1gCBIL2lbA8vEGmGbs.tOTeJctY5DQrmxZeFXzVIsN0d5Pi/vy",
+    "createdAt": {
+      "$date": "2020-05-28T15:48:05.426Z"
+    },
+    "updatedAt": {
+      "$date": "2020-05-28T15:48:05.426Z"
+    },
+    "__v": 0
+  }
+]
