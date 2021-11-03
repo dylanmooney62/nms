@@ -37,7 +37,7 @@
     "slugify": "^1.4.0",
     "stripe": "^8.39.0",
     "uuid": "^7.0.3",
-    "validator": "^13.0.0",
+    "validator": "^13.7.0",
     "xss-clean": "^0.1.1"
   }
 }
